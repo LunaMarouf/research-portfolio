@@ -1,0 +1,76 @@
+# =====================================================================
+# MUST NOT be published. Personal documents and private job-search work.
+# Luna's resume carries a phone number. The search spreadsheets and the
+# workbook generators are private. They live in this folder for
+# convenience only and must never reach the public repo.
+# =====================================================================
+*.pdf
+*.xlsx
+*.docx
+*.csv
+~$*
+scripts/generate_luna_*_workbook.py
+
+# =====================================================================
+# Tooling that assisted the build. Machine specific, not part of the site.
+# =====================================================================
+.claude/
+CLAUDE.md
+.cursor/
+.aider*
+.continue/
+
+# =====================================================================
+# Working files from building the site. Regenerable, so not committed.
+# Only the final chosen images are copied up into assets/.
+# =====================================================================
+assets/pdf_extract/
+*.dc.html
+_*.html
+*.tmp
+*.bak
+*~
+shots/
+screenshots/
+
+# =====================================================================
+# Raw experimental data and analysis outputs. These belong with the
+# instrument, not in a repo.
+# =====================================================================
+raw/
+*.pssession
+*.npz
+cv_pipeline_outputs/
+microscopy_screening_results_*.xlsx
+.matplotlib_cache/
+
+# =====================================================================
+# Python
+# =====================================================================
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# =====================================================================
+# Node, in case any tooling is added later
+# =====================================================================
+node_modules/
+package-lock.json
+.npm/
+
+# =====================================================================
+# OS and editor
+# =====================================================================
+.DS_Store
+._*
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*.swo

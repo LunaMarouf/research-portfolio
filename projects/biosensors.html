@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Molecularly imprinted electrochemical sensors | Luna Marouf</title>
+<meta name="description" content="Luna Marouf designs, fabricates and characterises molecularly imprinted electrochemical biosensors for protein detection, and writes the Python that turns raw instrument files into auditable results.">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<div class="shell">
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav">
+    <a class="back" href="../"><span class="arw">&larr;</span> Luna Marouf</a>
+    <span class="crumb">/ Biosensors, 2025 to 2026</span>
+    <a class="lnk" href="#problem">Problem</a>
+    <a class="lnk" href="#gen1">Device</a>
+    <a class="lnk" href="#results">Results</a>
+    <a class="lnk" href="#gen2">Second device</a>
+    <a class="lnk" href="#quality">Quality</a>
+    <a class="lnk" href="#software">Software</a>
+    <a class="lnk" href="#output">Output</a>
+    <a class="btn btn-primary" href="mailto:lunam@my.yorku.ca">Contact</a>
+  </nav>
+
+  <!-- ============ 01 IDENTITY ============ -->
+  <div class="hero solo" id="top">
+    <div>
+      <h1 class="h-xl">Molecularly imprinted electrochemical sensors for protein detection.</h1>
+      <p style="margin:20px 0 0;font-size:17px;max-width:52ch;color:var(--ink-78)">
+        Disposable three-electrode chips that detect a target protein by the shape of the cavity
+        it leaves behind. I design them, fabricate them in batches, run the electrochemistry, and
+        wrote the Python that turns raw instrument files into auditable results.
+      </p>
+      <p style="margin:16px 0 0;font-size:16px">
+        <b>Luna Marouf.</b> Final-year Honours BEng Mechanical Engineering, York University
+        Lassonde, 3.8/4.0, graduating 2027. Biosensor project lead at ACuTE, from April 2025.
+        Greater Toronto Area.
+      </p>
+      <p style="margin:12px 0 0;font-size:16px;color:var(--ink-78)">
+        Open to R&amp;D and internship roles in medical devices, diagnostics and sensing.
+      </p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px">
+        <a class="btn btn-primary" href="#results">See the results</a>
+        <a class="btn btn-secondary" href="mailto:lunam@my.yorku.ca">Email</a>
+        <a class="btn btn-secondary" href="https://www.linkedin.com/in/luna-marouf" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn btn-secondary" href="https://github.com/LunaMarouf/electrochemical-biosensor-analysis" target="_blank" rel="noopener">Analysis code</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 02 THE PROBLEM ============ -->
+  <section class="sec" id="problem">
+    <span class="lbl">02</span>
+    <hr class="rule">
+    <h2 class="h-md">The problem</h2>
+    <div class="two">
+      <p style="margin:0">
+        Detecting a specific protein normally means antibodies, which are expensive, need cold
+        storage, and go off. A molecularly imprinted polymer replaces the antibody with a plastic
+        film that has been grown around the target protein and then emptied, leaving cavities
+        shaped like it. The film is cheap, stable at room temperature, and made on the electrode
+        itself.
+      </p>
+      <p style="margin:0">
+        When the protein comes back it slots into those cavities and blocks the electrical signal
+        by a measurable amount. Less signal means more protein. The readout is signal-off, which
+        means the whole measurement depends on first proving that a film exists and that its
+        presence suppresses current. That proof is section 05.
+      </p>
+    </div>
+    <p style="margin:24px 0 0;max-width:min(66ch,620px);color:var(--ink-78)">
+      Two device generations exist and they are at different stages. The straight-channel device
+      detects cytochrome c, a marker associated with liver damage and hepatitis C, and works end
+      to end with a measured concentration response. The circular device targets the hepatitis C
+      virus Envelope 2 protein and is at fabrication and baseline characterisation. Nothing on
+      this page reports an Envelope 2 result.
+    </p>
+  </section>
+
+  <!-- ============ SPEC PLATE ============ -->
+  <div style="padding:0 var(--pad) 56px">
+    <div class="plate">
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      <header class="plate-hd">
+        <span>Measured performance, straight-channel platform</span>
+        <span>Cytochrome c</span>
+        <span>ACuTE, York University</span>
+      </header>
+      <table class="spec">
+        <tbody>
+          <tr><th scope="row">Oxidation-peak variance</th>
+            <td class="v">−83%</td><td class="d">After the Taguchi study set 2.5 mC/cm² charge density</td></tr>
+          <tr><th scope="row">Response across the range</th>
+            <td class="v">6.3 → 47.1%</td><td class="d">±0.64% to ±4.00% current suppression on rebinding, 1.5 to 20 µM</td></tr>
+          <tr><th scope="row">Calibration fit</th>
+            <td class="v">R² = 0.946</td><td class="d">y = 0.0200x + 0.0318, four concentrations, triplicate</td></tr>
+          <tr><th scope="row">Devices through the pipeline</th>
+            <td class="v">20+</td><td class="d">Fabricated, screened and batch-processed</td></tr>
+        </tbody>
+      </table>
+      <p class="plate-foot">
+        <span class="lbl" style="margin-bottom:6px">Not yet established</span>
+        <span class="t">Limit of detection, selectivity against the non-imprinted control, and
+        real-sample validation. See <a href="#limits">limitations</a>. First-author manuscript
+        under review at IEEE SENSORS 2026.</span>
+      </p>
+    </div>
+  </div>
+
+  <!-- ============ 03 GEN 1 DEVICE ============ -->
+  <section class="sec" id="gen1">
+    <span class="lbl">03</span>
+    <hr class="rule">
+    <h2 class="h-md">Straight-channel device, fabrication methodology</h2>
+    <p class="deck">Four layers, three electrodes, sprayed through stencils</p>
+    <p class="sub">
+      A PMMA top layer, two pressure-sensitive adhesive layers acting as spacer and mask, and a
+      PET base. Working and counter electrodes are sprayed graphene at 750 µm; the pseudo-reference
+      is sprayed Ag/AgCl at 350 µm.
+    </p>
+    <div class="split-75">
+    <figure>
+      <div class="bp" style="padding:12px">
+        <button type="button" class="zoombtn"><img class="zoom" src="../assets/device-architecture.png"
+             alt="Four-panel device figure showing the exploded layer stack, the top-view electrode mask with dimensions, the assembled sensor connected to a potentiostat, and a micrograph of the three electrode strips"
+             data-cap="Straight-channel device architecture. Exploded layer stack, electrode mask with track widths, the assembled chip under test, and the electrodes at 2.5X."></button>
+      </div>
+      <figcaption><b>Straight-channel device architecture.</b> Exploded stack, the mask with track
+      widths called out, the chip under test, and the electrodes at 2.5X with a 250 µm bar.</figcaption>
+    </figure>
+    <figure>
+      <div class="bp" style="padding:0">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <button type="button" class="zoombtn"><img class="zoom" src="../assets/chip-in-use.jpg" style="width:100%;height:auto"
+             alt="Assembled white PMMA chip during an experiment, with a yellow probe droplet in the circular sensing window and three coloured potentiostat leads clipped to the contact pads"
+             data-cap="Circular device during an electrochemical experiment. Probe droplet in the sensing window, potentiostat clips on the three contact pads."></button>
+      </div>
+      <figcaption><b>The device under test.</b> Ferri/ferrocyanide probe droplet in the sensing
+      window, potentiostat leads on the three contact pads.</figcaption>
+    </figure>
+    </div>
+  </section>
+
+  <!-- ============ 04 IMPRINTING ============ -->
+  <section class="sec" id="imprint">
+    <span class="lbl">04</span>
+    <hr class="rule">
+    <h2 class="h-md">Molecular imprinting, straight-channel device</h2>
+    <p class="deck">Grow the film around the protein, then take the protein out</p>
+    <p class="sub">
+      Eight steps from a bare graphene surface to a film full of cytochrome c shaped cavities ready
+      to rebind. The polymer layer is inferred from deposition charge at roughly 2 to 5 nm, thinner
+      than the template, so the cavities are surface indentations rather than enclosing pockets.
+    </p>
+    <figure>
+      <div class="bp" style="padding:12px">
+        <button type="button" class="zoombtn"><img class="zoom" src="../assets/mip-process.png"
+             alt="Eight-panel schematic of the molecular imprinting sequence from APTES silanization through to cytochrome c rebinding"
+             data-cap="The imprinting route. APTES silanization, DTSSP cross-linking, cytochrome c immobilisation, PmPD electropolymerisation, DTT elution, acetic acid wash, cavity formation, rebinding."></button>
+      </div>
+      <figcaption><b>The imprinting route.</b> Covalent surface imprinting with a cleavable
+      disulfide tether. The template is released by cleaving the linker, not by washing it out of a
+      bulk matrix.</figcaption>
+    </figure>
+    <div class="steps">
+      <div><span class="k">01</span><p><b>APTES silanization.</b> <span>Amine groups laid down on graphene.</span></p></div>
+      <div><span class="k">02</span><p><b>DTSSP cross-linking.</b> <span>NHS-ester linker bridges to the amines.</span></p></div>
+      <div><span class="k">03</span><p><b>Cyt c immobilisation.</b> <span>Template bound through amide bonds.</span></p></div>
+      <div><span class="k">04</span><p><b>PmPD growth.</b> <span>Film grown around the template, charge-limited.</span></p></div>
+      <div><span class="k">05</span><p><b>DTT elution.</b> <span>Disulfide cleaved to release the template.</span></p></div>
+      <div><span class="k">06</span><p><b>Acetic acid wash.</b> <span>Residual template stirred out of the film.</span></p></div>
+      <div><span class="k">07</span><p><b>Cavities formed.</b> <span>Open sites matching the protein shape.</span></p></div>
+      <div><span class="k">08</span><p><b>Rebinding.</b> <span>Known concentration dropcast onto the film.</span></p></div>
+    </div>
+    <p class="note">
+      Film growth is charge-controlled by chronoamperometry rather than timed, at 0.35 V in 20 mM
+      m-phenylenediamine, limited at 141.1 µC. The 2.5 mC/cm² setpoint was chosen from a Taguchi
+      study and is what produced the 83% reduction in oxidation-peak variance.
+    </p>
+  </section>
+
+  <!-- ============ 05 FILM FORMATION ============ -->
+  <section class="sec" id="film">
+    <span class="lbl">05</span>
+    <hr class="rule">
+    <h2 class="h-md">Film formation characterisation</h2>
+    <p class="deck">Proving the film is there before trusting anything it does</p>
+    <p class="sub">
+      The readout is signal-off, so the results in section 06 only mean something if a film exists
+      and if its presence suppresses current. Three lines of evidence, one morphological, one
+      elemental, one electrochemical.
+    </p>
+    <div class="g3">
+      <figure>
+        <div class="bp" style="padding:0">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/sem-bare.jpg" style="width:100%;height:auto"
+               alt="Scanning electron micrograph of the bare sprayed graphene electrode showing overlapping flake platelets"
+               data-cap="Bare sprayed graphene electrode region. SEM at 527X, 8 µm bar."></button>
+        </div>
+        <figcaption><b>Bare electrode.</b> SEM 527X, overlapping graphene platelets.</figcaption>
+      </figure>
+      <figure>
+        <div class="bp" style="padding:0">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/sem-pmpd.jpg" style="width:100%;height:auto"
+               alt="Scanning electron micrograph after PmPD coating showing flake edges smoothed and infilled by polymer"
+               data-cap="An electrode region after PmPD coating. SEM at 636X, 7 µm bar, flake edges smoothed and infilled. Compared against a bare region imaged at 527X."></button>
+        </div>
+        <figcaption><b>After PmPD.</b> SEM 636X, edges smoothed and infilled. Compared regions, not
+        the same field of view.</figcaption>
+      </figure>
+      <figure>
+        <div class="bp" style="padding:14px 16px">
+          <table class="table mini">
+            <thead><tr><th scope="col">Element</th><th scope="col">Bare</th><th scope="col">PmPD</th></tr></thead>
+            <tbody>
+              <tr><td>Carbon</td><td>98.3%</td><td>86.2%</td></tr>
+              <tr><td>Nitrogen</td><td>not detected</td><td>5.7%</td></tr>
+              <tr><td>Oxygen</td><td>1.7%</td><td>6.4%</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <figcaption><b>EDS composition.</b> Nitrogen absent from the bare surface, present after
+        coating. Values as reported; the coated column does not sum to 100%.</figcaption>
+      </figure>
+    </div>
+    <figure style="margin-top:32px;max-width:720px">
+      <div class="bp" style="padding:12px">
+        <button type="button" class="zoombtn"><img class="zoom" src="../assets/film-formation-current.png"
+             alt="Grouped bar chart of mean oxidation peak current for three devices, comparing DTSSP-coated electrodes against DTSSP plus PmPD-coated electrodes, with error bars"
+             data-cap="Mean oxidation peak current before and after PmPD deposition, across three devices, with error bars. Current falls on every device."></button>
+      </div>
+      <figcaption><b>Current suppression.</b> Oxidation peak current falls after PmPD deposition on
+      all three devices. This is the electrochemical half of the proof, and it is what makes the
+      signal-off readout in section 06 meaningful.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ============ 06 RESULTS ============ -->
+  <section class="sec" id="results">
+    <span class="lbl">06</span>
+    <hr class="rule">
+    <h2 class="h-md">Sensor response and cytochrome c rebinding</h2>
+    <p class="deck">Elution opens the film, rebinding closes it</p>
+    <p class="sub">
+      Measured against a ferri/ferrocyanide probe in 0.1 M KCl, triplicate-averaged, at 100 mV/s
+      over a −1.0 to +1.0 V window.
+    </p>
+    <div class="two">
+      <figure>
+        <div class="bp" style="padding:12px">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/cv-four-condition.png"
+               alt="Cyclic voltammogram overlaying four triplicate-averaged traces for the non-imprinted control, the imprinted film before and after elution, and after rebinding"
+               data-cap="Four-condition CV. Non-imprinted control, imprinted film before and after elution, and after 20 µM cytochrome c rebinding."></button>
+        </div>
+        <figcaption><b>Four conditions, with the non-imprinted control.</b> The non-imprinted film
+        gives the lowest, least featured response, consistent with a continuous blocking layer. The
+        imprinted film after elution gives the highest, with current rising from 47.67 to 72.99 µA.
+        Rebinding 20 µM cytochrome c suppresses it again.</figcaption>
+      </figure>
+      <figure>
+        <div class="bp" style="padding:12px">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/calibration-curve.png"
+               alt="Calibration plot of normalised peak current change against cytochrome c concentration with error bars and a dashed linear fit"
+               data-cap="Concentration response. Normalised change in anodic peak current against cytochrome c concentration, 1.5 to 20 µM, linear fit y = 0.0200x + 0.0318, R² = 0.946."></button>
+        </div>
+        <figcaption><b>Concentration response.</b> Monotonic across four concentrations from 1.5 to
+        20 µM, rising from 6.34 ± 0.64% to 47.09 ± 4.00%. A linear fit is shown for comparison,
+        y = 0.0200x + 0.0318, R² = 0.946. The response shape is not yet established over a wider
+        range.</figcaption>
+      </figure>
+    </div>
+    <p class="note">
+      The rebound trace falls below the pre-elution state rather than returning to it. That is
+      consistent with additional non-specific adsorption at the highest concentration and has not
+      yet been separated from cavity rebinding. Quantifying an imprinting factor requires running
+      the non-imprinted film through the same rebinding series, which has not been done.
+    </p>
+  </section>
+
+  <!-- ============ 07 GEN 2 ============ -->
+  <section class="sec" id="gen2">
+    <span class="lbl">07</span>
+    <hr class="rule">
+    <h2 class="h-md">Circular-channel device, Envelope 2 protein detection</h2>
+    <p class="deck">A second-generation device, designed rather than improvised</p>
+    <p class="sub">
+      The successor to the straight-channel platform, targeting the hepatitis C virus Envelope 2
+      protein. A 3 mm circular working electrode for uniform current distribution, an oversized
+      counter electrode so current is never limited there, and a closely spaced reference to
+      minimise iR drop. Status is fabrication and baseline characterisation. No Envelope 2
+      concentration response has been measured.
+    </p>
+    <div class="split-75">
+      <figure>
+        <div class="bp" style="padding:0">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/hero-stencil-agagcl.jpg" style="width:100%;height:auto"
+               alt="Stencil panel after the silver silver-chloride spray step, a repeating grid of electrode-shaped cut-outs"
+               data-cap="Ag/AgCl spray step. The second pass lays the pseudo-reference across a full stencil panel of nominally identical devices."></button>
+        </div>
+        <figcaption><b>Batch fabrication.</b> Masks laser cut on an Epilog Fusion Pro 17000 at 65%
+        speed and 15% power on medium tack PSA, then sprayed in panels. Graphene through a 0.5 mm
+        nozzle, Ag/AgCl through 0.8 mm, both at 4 bar and 23 L/min. Not a hand-made one-off.</figcaption>
+      </figure>
+      <figure>
+        <div class="bp" style="padding:12px">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/solidworks-sketch.png" style="width:100%;height:auto"
+               alt="Dimensioned SolidWorks sketch of the circular electrode layout"
+               data-cap="SolidWorks sketch of the circular electrode layout, fully dimensioned. 3 mm circular working electrode, 5.00 mm pad pitch."></button>
+        </div>
+        <figcaption><b>Circular layout.</b> Dimensioned in SolidWorks, with electrode spacing traded
+        off against diffusion-layer overlap and fabrication tolerance.</figcaption>
+      </figure>
+    </div>
+
+    <h3 class="h-sm" style="margin:40px 0 16px">Baseline electrochemical characterisation</h3>
+    <p class="sub" style="margin-bottom:24px">
+      One representative result per technique on the circular device, each the mean of three runs,
+      on Devices 1, 6 and 7. These characterise the cell, not an analyte response.
+    </p>
+    <div class="g3">
+      <figure>
+        <div class="bp" style="padding:12px">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/eis-nyquist.png"
+               alt="Nyquist plot showing a charge transfer semicircle and a rising low frequency tail"
+               data-cap="EIS Nyquist plot, Device 6, mean of three runs. 5 mM ferri/ferrocyanide, 0.1 M KCl, 0.20 V DC bias, 10 mV AC, 50 kHz to 0.1 Hz."></button>
+        </div>
+        <figcaption><b>Impedance.</b> Device 6. Uncompensated resistance near 0.50 kΩ, charge
+        transfer near 0.45 kΩ, with a low-frequency mass-transport tail.</figcaption>
+      </figure>
+      <figure>
+        <div class="bp" style="padding:12px">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/dpv-peak.png"
+               alt="Differential pulse voltammogram with the oxidation peak marked and annotated"
+               data-cap="DPV, Device 1, mean of three runs, faradaic-only peak marked."></button>
+        </div>
+        <figcaption><b>Differential pulse voltammetry.</b> Device 1. E<sub>p,ox</sub> = 0.162 V,
+        I<sub>p,ox</sub> = 33.42 ± 1.22 µA.</figcaption>
+      </figure>
+      <figure>
+        <div class="bp" style="padding:12px">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/mpd-vs-pbs.png"
+               alt="Two overlaid current potential traces comparing a PBS blank with the mPD solution"
+               data-cap="Linear sweep, Device 7. PBS blank against 20 mM m-PD, showing monomer oxidation onset."></button>
+        </div>
+        <figcaption><b>Monomer, not background.</b> Device 7. m-PD oxidation onset near 0.30 V
+        rising to about 31 µA while the blank stays under 11 µA.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ 08 QUALITY ============ -->
+  <section class="sec" id="quality">
+    <span class="lbl">08</span>
+    <hr class="rule">
+    <h2 class="h-md">Quality assurance, examples of rejected devices</h2>
+    <p class="deck">Deciding which chips are worth testing</p>
+    <p class="sub">
+      Electrochemical testing is slow and reagents are finite, so every device is inspected under
+      the microscope first. Three rejection triggers are applied, one example of each shown below.
+      Ag/AgCl contamination on the working electrode, reference-electrode breakage or
+      non-uniformity, and conductive contact between the working and reference electrodes. An
+      accepted device is shown in <a href="#traceability">section 09</a>.
+    </p>
+    <div class="g3">
+      <figure>
+        <div class="bp" style="padding:0">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/reject-short.jpg" style="width:100%;height:auto"
+               alt="Micrograph showing conductive contact between the working and reference electrodes"
+               data-cap="Rejected. Conductive contact between the working and reference electrodes, a short-circuit risk. 200 µm bar."></button>
+        </div>
+        <figcaption><b class="no">Rejected.</b> Short-circuit risk between working and reference.</figcaption>
+      </figure>
+      <figure>
+        <div class="bp" style="padding:0">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/reject-ref-break.jpg" style="width:100%;height:auto"
+               alt="Micrograph showing reference electrode breakage and non-uniformity"
+               data-cap="Rejected. Reference-electrode breakage and non-uniformity, plus deposits on the working electrode. 200 µm bar."></button>
+        </div>
+        <figcaption><b class="no">Rejected.</b> Reference breakage and non-uniformity.</figcaption>
+      </figure>
+      <figure>
+        <div class="bp" style="padding:0">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/device-rejected.jpg" style="width:100%;height:auto"
+               alt="Micrograph showing heavy contamination along the working electrode edge"
+               data-cap="Rejected. Heavy contamination smeared along the working electrode edge and reference track. 200 µm bar."></button>
+        </div>
+        <figcaption><b class="no">Rejected.</b> Heavy working-electrode contamination.</figcaption>
+      </figure>
+    </div>
+    <p class="note">
+      Screening is an aid, not a validated defect classifier. Devices it keeps still go through dry
+      isolation and continuity checks, open circuit potential stability, and full electrochemical
+      validation before any result is trusted.
+    </p>
+  </section>
+
+  <!-- ============ 09 TRACEABILITY ============ -->
+  <section class="sec" id="traceability">
+    <span class="lbl">09</span>
+    <hr class="rule">
+    <h2 class="h-md">The curve and the device it came from</h2>
+    <p class="deck">Every number is traceable to an inspected device</p>
+    <p class="sub">
+      The screening gate only means something if the data that gets published comes from devices
+      that passed it. These three belong together. An approved device, the voltammogram it
+      produced, and the process record of how its film was grown.
+    </p>
+    <div class="g3">
+      <figure>
+        <div class="bp" style="padding:0">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/device-accepted.jpg" style="width:100%;height:auto"
+               alt="Brightfield micrograph of the approved circular device at 1.6 times magnification"
+               data-cap="The approved device. 1.6X, 200 µm bar."></button>
+        </div>
+        <figcaption><b>1. The inspected device.</b> Passed the screening in section 08 and was
+        dispositioned as accepted. 1.6X, 200 µm bar.</figcaption>
+      </figure>
+      <figure>
+        <div class="bp" style="padding:12px">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/cv-mean-sd.png"
+               alt="Cyclic voltammogram showing a mean trace with a shaded standard deviation band"
+               data-cap="Mean CV over three scans with a ±1 SD band, showing the three characteristic peaks."></button>
+        </div>
+        <figcaption><b>2. Its voltammogram.</b> Mean of three scans with a ±1 SD band. Three
+        characteristic peaks near −0.2, 0.12 and 0.55 V.</figcaption>
+      </figure>
+      <figure>
+        <div class="bp" style="padding:12px">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/chronoamperometry.png"
+               alt="Chronoamperometry current decay with the operational plateau onset marked"
+               data-cap="Chronoamperometric electropolymerisation for Device 16 at 0.35 V, initial valid peak 6.04 µA, plateau onset 15.9 s at 4.81 µA."></button>
+        </div>
+        <figcaption><b>3. Its process record.</b> Device 16. Film growth stopped by charge, not by
+        a timer, so every device gets the same film.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ 10 SOFTWARE ============ -->
+  <section class="sec" id="software">
+    <span class="lbl">10</span>
+    <hr class="rule">
+    <h2 class="h-md">Software</h2>
+    <p class="deck">The analysis is code, not spreadsheets</p>
+    <p class="sub">
+      Both tools are manifest driven. Raw instrument files are never renamed or edited; a
+      spreadsheet maps each file to its device, stage, replicate and concentration, and that
+      manifest is the record of what was run. Two people running the same manifest get the same
+      answer.
+    </p>
+    <div class="two">
+      <article class="bp" style="padding:24px">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap">
+          <h3 class="h-sm">Cyclic voltammetry pipeline</h3>
+          <span style="font-size:12px;color:var(--ink-70);font-family:var(--mono)">CV/CV_Main_Script.py</span>
+        </div>
+        <div class="bp" style="margin-top:16px;padding:0;border-color:var(--divider-soft)">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/code-cv-pipeline.png" style="width:100%;height:190px;object-fit:cover;object-position:left top"
+               alt="Screenshot of the cyclic voltammetry processing Python source"
+               data-cap="cv_pipeline.py, automated CV processing and statistical averaging."></button>
+        </div>
+        <p style="margin:16px 0 0;color:var(--ink-78)">
+          Extracts the third scan from each of three technical runs, verifies the potential axes
+          match row by row before averaging rather than silently misaligning them, then computes
+          point-by-point mean, standard deviation and standard error.
+        </p>
+        <ul class="pts">
+          <li>Custom peak finder with branch splitting, prominence scoring and refinement back to the raw extreme</li>
+          <li>Dose response fitted against linear, log-linear and power models with R² for each</li>
+          <li>Multi-sheet Excel workbook plus 600 dpi PNG, PDF and SVG</li>
+        </ul>
+        <div class="tags">
+          <span class="tag tag-accent">Python</span><span class="tag tag-accent">pandas</span>
+          <span class="tag tag-accent">NumPy</span><span class="tag tag-accent">Matplotlib</span>
+          <span class="tag tag-outline">peak detection</span><span class="tag tag-outline">curve fitting</span>
+        </div>
+        <a class="btn btn-ghost" href="https://github.com/LunaMarouf/electrochemical-biosensor-analysis/blob/main/CV/CV_Main_Script.py" target="_blank" rel="noopener">View source →</a>
+      </article>
+
+      <article class="bp" style="padding:24px">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap">
+          <h3 class="h-sm">Microscopy screening</h3>
+          <span style="font-size:12px;color:var(--ink-70);font-family:var(--mono)">Microscopy/microscopy_screening.py</span>
+        </div>
+        <div class="bp" style="margin-top:16px;padding:0;border-color:var(--divider-soft)">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/code-screening.png" style="width:100%;height:190px;object-fit:cover;object-position:left top"
+               alt="Screenshot of the microscopy screening Python source"
+               data-cap="microscopy_screening.py, microscopy-assisted electrode quality screening."></button>
+        </div>
+        <p style="margin:16px 0 0;color:var(--ink-78)">
+          Groups images by device, applies the three hard rejection rules, then compares complete
+          sets against a locally calibrated reference model. Hand-written computer vision, with
+          contrast-normalised edge maps, FFT phase-correlation registration, and a
+          distance-weighted three-nearest-neighbour vote.
+        </p>
+        <ul class="pts">
+          <li>Accept, conditional, hold, review and reject dispositions with reason codes</li>
+          <li>Out-of-distribution guard returns REVIEW rather than guessing</li>
+          <li>Manual override column preserved across reruns</li>
+        </ul>
+        <div class="tags">
+          <span class="tag tag-accent">Python</span><span class="tag tag-accent">NumPy</span>
+          <span class="tag tag-accent">Pillow</span><span class="tag tag-accent">openpyxl</span>
+          <span class="tag tag-outline">FFT registration</span><span class="tag tag-outline">human in the loop</span>
+        </div>
+        <a class="btn btn-ghost" href="https://github.com/LunaMarouf/electrochemical-biosensor-analysis/blob/main/Microscopy/microscopy_screening.py" target="_blank" rel="noopener">View source →</a>
+      </article>
+    </div>
+    <p class="note">
+      DPV and EIS run through a separate manifest-driven pipeline built on the same pattern, with
+      the technique dispatch in
+      <a href="https://github.com/LunaMarouf/electrochemical-biosensor-analysis/blob/main/DPV_EIS/DPV%20and%20EIS%20Data%20Analysis.py" target="_blank" rel="noopener">DPV and EIS Data Analysis.py</a>
+      and the pipelines themselves in
+      <a href="https://github.com/LunaMarouf/electrochemical-biosensor-analysis/blob/main/DPV_EIS/electrochem_analysis" target="_blank" rel="noopener">electrochem_analysis</a>.
+    </p>
+  </section>
+
+  <!-- ============ 11 LIMITATIONS ============ -->
+  <section class="sec" id="limits">
+    <span class="lbl">11</span>
+    <hr class="rule">
+    <h2 class="h-md">Limitations and next steps</h2>
+    <p class="deck">What this platform has not shown yet</p>
+    <div class="two">
+      <div>
+        <h4 style="margin:0 0 6px;font-size:16px">Not established</h4>
+        <ul class="pts" style="margin-top:8px">
+          <li>No limit of detection or limit of quantification</li>
+          <li>No quantified imprinting factor or selectivity against the non-imprinted control</li>
+          <li>No real-sample or spiked-matrix validation</li>
+          <li>No direct film thickness measurement; the 2 to 5 nm figure is inferred from deposition charge</li>
+          <li>No stability, shelf-life or reusability data</li>
+          <li>No Envelope 2 concentration response on the circular device</li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="margin:0 0 6px;font-size:16px">The experiments that would close these</h4>
+        <ul class="pts" style="margin-top:8px">
+          <li>Run the non-imprinted film through the identical rebinding series to give an imprinting factor</li>
+          <li>Extend the concentration series below 1.5 µM to establish detection limit and response shape</li>
+          <li>Separate cavity rebinding from non-specific adsorption at the top of the range</li>
+          <li>Track charge transfer resistance across the four imprinting conditions as an orthogonal confirmation</li>
+          <li>Report device-to-device distribution across the batch rather than representative devices</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note">
+      Stated deliberately. This is a validated fabrication and characterisation platform with a
+      demonstrated concentration response, not a diagnostic device.
+    </p>
+  </section>
+
+  <!-- ============ 12 OUTPUT ============ -->
+  <section class="sec" id="output">
+    <span class="lbl">12</span>
+    <hr class="rule">
+    <div class="split-75" style="gap:32px">
+      <div>
+        <h2 class="h-md">Output, publications and presentations</h2>
+        <ul class="pubs">
+          <li class="live">
+            <b>Sprayed graphene molecularly imprinted electrochemical cytochrome c sensor
+              <span class="tag tag-accent" style="margin-left:6px;vertical-align:2px">Peer review, submitted</span></b>
+            <span>L. Marouf, A. Doostmohammadi, P. Rezai. First author. Peer-reviewed conference
+            paper submitted to IEEE SENSORS 2026, 30 June 2026.</span>
+          </li>
+          <li>
+            <b>Molecularly imprinted polymer-based electrochemical sensor for cytochrome c detection
+              <span class="tag tag-outline" style="margin-left:6px;vertical-align:2px">Presented</span></b>
+            <span>L. Marouf, A. Doostmohammadi, P. Rezai. Health Research Conference, 2026. Also
+            presented as a poster at the Integrating Pathogen Surveillance Networks Symposium,
+            University of Windsor, March 2026.</span>
+          </li>
+          <li>
+            <b>Optimization of electrochemical CO₂ capture with photocatalytic aerogel materials
+              <span class="tag tag-outline" style="margin-left:6px;vertical-align:2px">Meeting abstract</span></b>
+            <span>A. Halim, L. Marouf et al. Electrochemical Society Meeting Abstracts, vol. 247,
+            p. 2732, 2025.</span>
+          </li>
+        </ul>
+        <p style="margin:20px 0 0;font-size:13px;color:var(--ink-70)">
+          A second manuscript covering the Envelope 2 device is in preparation. Research conducted
+          at the Advanced Center for Microfluidics Technology and Engineering, York University,
+          with co-authors Ali Doostmohammadi and Pouya Rezai.
+        </p>
+      </div>
+      <div>
+        <div class="bp" style="padding:22px">
+          <h3 class="h-sm" style="margin-bottom:14px">Tools and methods</h3>
+          <dl class="kv">
+            <div><dt>Fabrication</dt><dd>SolidWorks · laser cutting · spray coating · PSA lamination · batch panels</dd></div>
+            <div><dt>Electrochemistry</dt><dd>Cyclic voltammetry · differential pulse voltammetry · electrochemical impedance spectroscopy · chronoamperometry · PSTrace</dd></div>
+            <div><dt>Characterisation</dt><dd>SEM · EDS · upright optical microscopy</dd></div>
+            <div><dt>Analysis</dt><dd>Python · MATLAB · Git · design of experiments, Taguchi and multilevel factorial</dd></div>
+            <div><dt>Quality</dt><dd>Design control practice · verification and validation · defect-to-failure-mode mapping · dispositions with reason codes · root-cause analysis</dd></div>
+            <div><dt>Hardware</dt><dd>Altium PCB schematic capture · harness integration · ECU I/O mapping</dd></div>
+          </dl>
+        </div>
+        <div class="bp" style="padding:22px;margin-top:24px">
+          <h3 class="h-sm" style="margin-bottom:14px">Elsewhere</h3>
+          <ul class="bare">
+            <li><b>Lassonde Motorsports, Formula SAE.</b> Electrical team lead, nine members. Engine
+            harness integration, ECU I/O mapping, shutdown and interlock review.</li>
+            <li><b>Monaco Energy Boat Challenge.</b> Multi-sensor PCB schematics in Altium for
+            propulsion, sensing and control.</li>
+            <li><b>Freire-Gormaly Lab.</b> Electrospun PVA/chitosan filtration membranes, multilevel
+            factorial design in MATLAB.</li>
+            <li><b>Floating dual-axis solar tracker.</b> System integration and verification, AGMA
+            geartrain calculations automated in MATLAB.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 13 CONTACT ============ -->
+  <div style="padding:0 var(--pad)" id="contact">
+    <div style="border-top:1px solid var(--divider);padding:48px 0;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:end">
+      <div>
+        <span class="lbl">13</span>
+        <h2 class="h-lg" style="margin-bottom:16px">Open to R&amp;D roles in medical devices, diagnostics and sensing</h2>
+        <p style="margin:0;max-width:min(60ch,560px);color:var(--ink-78)">
+          Final-year Honours BEng in Mechanical Engineering at York University's Lassonde School of
+          Engineering, 3.8/4.0, focused on biomedical devices and biosensors, graduating 2027.
+          Based in the Greater Toronto Area.
+        </p>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn btn-primary" href="mailto:lunam@my.yorku.ca">lunam@my.yorku.ca</a>
+        <a class="btn btn-secondary" href="https://www.linkedin.com/in/luna-marouf" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div style="border-top:1px solid var(--divider);padding:36px 0">
+      <a class="btn btn-secondary" href="../#work">&larr; All work</a>
+    </div>
+    <footer class="foot">
+      <span>Luna Marouf · Research conducted at ACuTE, York University</span>
+      <span><a href="https://github.com/LunaMarouf/electrochemical-biosensor-analysis" target="_blank" rel="noopener">Source and analysis code</a></span>
+    </footer>
+  </div>
+
+</div>
+
+<dialog id="lb" aria-label="Enlarged figure">
+  <button class="x" type="button" aria-label="Close figure">&times;</button>
+  <div class="inner">
+    <div>
+      <img id="lb-img" src="" alt="">
+      <p id="lb-cap"></p>
+    </div>
+  </div>
+</dialog>
+
+<script>
+(function(){
+  var lb=document.getElementById('lb'),
+      img=document.getElementById('lb-img'),
+      cap=document.getElementById('lb-cap');
+  document.querySelectorAll('button.zoombtn').forEach(function(btn){
+    var el=btn.querySelector('img');
+    if(!el) return;
+    btn.setAttribute('aria-label','Enlarge figure. '+(el.getAttribute('alt')||''));
+    btn.addEventListener('click',function(){
+      img.src=el.getAttribute('src');
+      img.alt=el.getAttribute('alt')||'';
+      cap.textContent=el.getAttribute('data-cap')||'';
+      if(lb.showModal) lb.showModal(); else lb.setAttribute('open','');
+    });
+  });
+  function close(){ if(lb.open){ lb.close ? lb.close() : lb.removeAttribute('open'); } }
+  lb.addEventListener('click',function(e){ if(e.target!==img) close(); });
+  lb.addEventListener('close',function(){ img.src=''; });
+})();
+</script>
+
+</body>
+</html>

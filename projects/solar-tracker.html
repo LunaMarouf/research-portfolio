@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Floating dual-axis solar tracker | Luna Marouf</title>
+<meta name="description" content="Luna Marouf worked on system integration and verification for a pontoon-mounted dual-axis solar tracker, including AGMA gear calculations automated in MATLAB.">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<div class="shell">
+
+  <nav class="nav">
+    <a class="back" href="../"><span class="arw">&larr;</span> Luna Marouf</a>
+    <span class="crumb">/ Solar tracker</span>
+    <a class="btn btn-primary" href="mailto:lunam@my.yorku.ca">Contact</a>
+  </nav>
+
+  <div class="hero solo" id="top">
+    <div>
+      <h1 class="h-xl">Floating dual-axis solar tracker.</h1>
+      <p class="deck" style="margin-top:20px">A pontoon-mounted tracker that keeps a panel pointed at the sun on water, with the drive train verified against AGMA gear criteria.</p>
+      <p style="margin:0;font-size:16px;color:var(--ink-78)">Design project &middot; System integration and verification</p>
+    </div>
+  </div>
+
+  <section class="sec" id="what">
+    <span class="lbl">01</span>
+    <hr class="rule">
+    <h2 class="h-md">What it was</h2>
+    <div class="two">
+      <p style="margin:0">A dual-axis tracker rotates a solar panel in two directions so it stays pointed at the sun through the day, which raises yield over a fixed panel. Mounting one on pontoons adds the problem of doing this on a platform that is itself moving.</p>
+      <p style="margin:0">I worked on system integration and verification, and on the mechanical analysis of the drive. Concept selection used a weighted decision matrix, and the rack-and-pinion drive was checked against AGMA pitting and bending criteria with the calculations automated in MATLAB.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="role">
+    <span class="lbl">02</span>
+    <hr class="rule">
+    <h2 class="h-md">What I did</h2>
+    <ul class="pts" style="margin-top:0">
+      <li>System integration and verification.</li>
+      <li>Concept selection by weighted decision matrix.</li>
+      <li>AGMA gear train calculations for the rack and pinion drive, automated in MATLAB.</li>
+      <li>Arduino-based control with light-sensing feedback.</li>
+    </ul>
+  </section>
+
+  <section class="sec" id="numbers">
+    <span class="lbl">03</span>
+    <hr class="rule">
+    <h2 class="h-md">Design figures</h2>
+    <div class="scroll-x">
+      <table class="table">
+        <thead><tr><th scope="col">Parameter</th><th scope="col">Value</th></tr></thead>
+        <tbody>
+          <tr><td>Pontoons</td><td>Two, 320 &times; 120 mm</td></tr>
+          <tr><td>Controller</td><td>Arduino MKR WiFi 1010</td></tr>
+          <tr><td>Light sensing</td><td>Four LDR sensors</td></tr>
+          <tr><td>Concept selection score</td><td>7.95, against 7.05 for the alternatives</td></tr>
+          <tr><td>Rack and pinion, pitting safety factor</td><td>5.32 and 5.29</td></tr>
+          <tr><td>Rack and pinion, bending safety factor</td><td>3.04 and 4.07</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div style="padding:0 var(--pad)">
+    <div style="border-top:1px solid var(--divider);padding:40px 0">
+      <a class="btn btn-secondary" href="../#work">&larr; All work</a>
+    </div>
+    <footer class="foot">
+      <span>Luna Marouf</span>
+      <span><a href="mailto:lunam@my.yorku.ca">lunam@my.yorku.ca</a></span>
+    </footer>
+  </div>
+</div>
+</body>
+</html>
