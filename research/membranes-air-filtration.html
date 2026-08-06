@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Electrospun chitosan:PVA membranes for air filtration | Luna Marouf</title>
+<title>Electrospun Chitosan:PVA Membranes for Air Filtration | Luna Marouf</title>
 <meta name="description" content="Luna Marouf produced electrospun chitosan:PVA membranes at 22 to 25 g per square metre in the Freire-Gormaly Lab, with rheology characterisation, power-law fitting and a multilevel factorial design in MATLAB.">
 <meta name="color-scheme" content="light">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
@@ -14,7 +14,7 @@
 
   <nav class="nav">
     <a class="back" href="../"><span class="arw">&larr;</span> Luna Marouf</a>
-    <span class="crumb">/ Lab research / Freire-Gormaly / Air filtration</span>
+    <span class="crumb">/ Lab Research / Freire-Gormaly / Air Filtration</span>
     <a class="lnk" href="#what">Overview</a>
     <a class="lnk" href="#fabrication">Fabrication</a>
     <a class="lnk" href="#rheology">Rheology</a>
@@ -24,7 +24,7 @@
 
   <div class="hero solo" id="top">
     <div>
-      <h1 class="h-xl">Electrospun chitosan:PVA membranes for air filtration.</h1>
+      <h1 class="h-xl">Electrospun Chitosan:PVA Membranes for Air Filtration.</h1>
       <p class="deck" style="margin-top:20px">
         Producing chitosan:PVA polymer membranes by electrospinning, characterising the spinning
         solution's rheology, and using a designed experiment to relate process parameters to the
@@ -37,7 +37,7 @@
   <section class="sec" id="what">
     <span class="lbl">01</span>
     <hr class="rule">
-    <h2 class="h-md">What it was</h2>
+    <h2 class="h-md">What It Was</h2>
     <div class="two">
       <p style="margin:0">
         Electrospinning draws a polymer solution into fine fibres using a high electric field,
@@ -58,30 +58,92 @@
   <section class="sec" id="fabrication">
     <span class="lbl">02</span>
     <hr class="rule">
-    <h2 class="h-md">Fabrication procedure</h2>
-    <ul class="pts" style="margin-top:0">
-      <li>Chitosan:PVA solution preparation at set blend ratios</li>
-      <li>Electrospinning onto a collector, process parameters set per the factorial design</li>
-      <li>Membranes produced at 22 to 25 g/m&sup2; areal density</li>
-      <li>Multilevel factorial design of experiments, implemented in MATLAB, to relate spinning
-      parameters to the resulting membrane</li>
-    </ul>
-    <p class="note">
-      Full step-by-step fabrication detail, with process photos, to be added.
+    <h2 class="h-md">Fabrication Procedure</h2>
+    <p class="deck">A syringe pump, a high-voltage supply, and a grounded collector</p>
+    <div class="split-75">
+      <figure>
+        <div class="bp" style="padding:0">
+          <img src="../assets/air-filtration-electrospinner.png" style="width:100%;height:auto"
+               alt="Annotated photo of the electrospinning rig showing the 3D kV supply, membrane on the electrospinner, syringe pump, 21 gauge needle, NEMA-17 stepper motor and supporting structure">
+        </div>
+        <figcaption><b>The electrospinning rig.</b> Polymer solution drawn from a syringe pump
+        through a 21G &times; 1&frac12;&Prime; needle at high voltage, collected as fibre on a
+        rotating membrane driven by a NEMA-17 stepper motor.</figcaption>
+      </figure>
+      <div>
+        <ul class="pts" style="margin-top:0">
+          <li>Chitosan:PVA solution preparation at set blend ratios</li>
+          <li>Electrospinning onto a rotating collector, process parameters set per the
+          factorial design below</li>
+          <li>Membranes produced at 22 to 25 g/m&sup2; areal density</li>
+          <li>Multilevel factorial design of experiments, implemented in MATLAB, to relate
+          spinning parameters to the resulting membrane</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="h-sm" style="margin:32px 0 16px">Full Factorial Design of Experiments</h3>
+    <p class="sub" style="margin-bottom:20px">
+      Four spinning parameters at three or four levels each, run as a full factorial rather than
+      one factor at a time, 108 combinations in total.
     </p>
+    <div class="scroll-x">
+      <table class="table">
+        <thead><tr><th scope="col">Parameter</th><th scope="col">Levels</th></tr></thead>
+        <tbody>
+          <tr><td>Chitosan:PVA concentration</td><td>6:1, 8:2, 10:3, 12:4 (% w/v)</td></tr>
+          <tr><td>Applied voltage</td><td>12, 16, 20 kV</td></tr>
+          <tr><td>Needle diameter</td><td>0.5, 0.7, 1.2 mm</td></tr>
+          <tr><td>Collector distance</td><td>10, 12, 14 cm</td></tr>
+          <tr><td>Design</td><td>Full factorial, 4 &times; 3 &times; 3 &times; 3 = 108 runs</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="h-sm" style="margin:32px 0 16px">The Rig in Use</h3>
+    <div class="g3">
+      <figure>
+        <div class="bp" style="padding:8px">
+          <video controls preload="metadata" style="width:100%;display:block">
+            <source src="../assets/air-filtration-setup-1.mov" type="video/mp4">
+            <a href="../assets/air-filtration-setup-1.mov">Download the video</a>.
+          </video>
+        </div>
+        <figcaption>Electrospinning in progress, run 1.</figcaption>
+      </figure>
+      <figure>
+        <div class="bp" style="padding:8px">
+          <video controls preload="metadata" style="width:100%;display:block">
+            <source src="../assets/air-filtration-setup-2.mov" type="video/mp4">
+            <a href="../assets/air-filtration-setup-2.mov">Download the video</a>.
+          </video>
+        </div>
+        <figcaption>Electrospinning in progress, run 2.</figcaption>
+      </figure>
+      <figure>
+        <div class="bp" style="padding:8px">
+          <video controls preload="metadata" style="width:100%;display:block">
+            <source src="../assets/air-filtration-setup-3.mov" type="video/mp4">
+            <a href="../assets/air-filtration-setup-3.mov">Download the video</a>.
+          </video>
+        </div>
+        <figcaption>Electrospinning in progress, run 3.</figcaption>
+      </figure>
+    </div>
   </section>
 
   <section class="sec" id="rheology">
     <span class="lbl">03</span>
     <hr class="rule">
-    <h2 class="h-md">Rheology and power-law fitting</h2>
+    <h2 class="h-md">Rheology and Power-Law Fitting</h2>
     <p class="deck">Characterising the spinning solution before blaming the process</p>
     <p class="sub">
       Fibre formation depends on how the chitosan:PVA solution behaves under shear, not just on
       its concentration. Rheological data was processed and fit to a power-law (Ostwald-de
       Waele) model in MATLAB to extract the flow behaviour index and consistency coefficient
-      for each solution formulation, so shifts in spinnability could be tied back to solution
-      rheology rather than treated as unexplained fabrication variance.
+      for each solution formulation, relating shear-thinning behaviour and processing conditions
+      to fibre formation and membrane quality, so shifts in spinnability could be tied back to
+      solution rheology rather than treated as unexplained fabrication variance.
     </p>
     <p class="note">
       Rheology plots and the MATLAB power-law fitting script to be added.
@@ -91,11 +153,14 @@
   <section class="sec" id="rig">
     <span class="lbl">04</span>
     <hr class="rule">
-    <h2 class="h-md">Filtration efficiency test rig</h2>
+    <h2 class="h-md">Filtration Efficiency Test Rig</h2>
     <p class="sub">
-      A test rig to measure the filtration efficiency of the membranes produced was planned and
-      sketched, but not yet built. The design work will need to be redrawn and documented
-      properly here.
+      The layout and operating requirements for a closed-loop filtration test rig were
+      developed, using a HEPA-filtered air supply and an SMPS particle counter to allow
+      quantitative efficiency measurement under controlled particle size distributions. Airflow
+      performance was evaluated against ASHRAE 62.1 (indoor air quality) and ASHRAE 52.2
+      (particulate filtration) criteria. The rig was sketched and speced but not yet built, and
+      the design work will need to be redrawn and documented properly here.
     </p>
     <p class="note">Rig sketches and design notes to be added.</p>
   </section>

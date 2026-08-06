@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Satellite-tracking antenna | Luna Marouf</title>
-<meta name="description" content="A personal project by Luna Marouf and a friend building an antenna to detect and track satellites.">
+<title>NOAA Weather Satellite Receiving Antenna | Luna Marouf</title>
+<meta name="description" content="A personal project by Luna Marouf and a friend, receiving live APT weather images off NOAA polar-orbiting satellites with a homemade antenna and an SDR receiver.">
 <meta name="color-scheme" content="light">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../assets/site.css">
@@ -14,16 +14,18 @@
 
   <nav class="nav">
     <a class="back" href="../"><span class="arw">&larr;</span> Luna Marouf</a>
-    <span class="crumb">/ Personal / Satellite antenna</span>
+    <span class="crumb">/ Personal / Satellite Antenna</span>
+    <a class="lnk" href="#what">Overview</a>
+    <a class="lnk" href="#results">Results</a>
     <a class="btn btn-primary" href="mailto:lunam@my.yorku.ca">Contact</a>
   </nav>
 
   <div class="hero solo" id="top">
     <div>
-      <h1 class="h-xl">Satellite-tracking antenna.</h1>
+      <h1 class="h-xl">NOAA Weather Satellite Receiving Antenna.</h1>
       <p class="deck" style="margin-top:20px">
-        A personal project built with a friend outside of coursework or lab work, an antenna
-        setup that detects and tracks satellites overhead.
+        A weekend project with a friend, receiving live weather images broadcast from NOAA
+        polar-orbiting satellites with a homemade antenna and an SDR receiver.
       </p>
       <p style="margin:0;font-size:16px;color:var(--ink-78)">Personal project</p>
     </div>
@@ -32,13 +34,67 @@
   <section class="sec" id="what">
     <span class="lbl">01</span>
     <hr class="rule">
-    <h2 class="h-md">What it was</h2>
-    <p style="margin:0;max-width:min(66ch,620px)">
-      Built with a friend for its own sake rather than for a course or a lab. The antenna picks
-      up satellite signals as they pass overhead, and the receiving software's screen shows the
-      detected passes.
+    <h2 class="h-md">What It Was</h2>
+    <div class="two">
+      <p style="margin:0">
+        NOAA's polar-orbiting weather satellites (NOAA 15, 18 and 19) continuously broadcast
+        their Automatic Picture Transmission (APT) signal at around 137 MHz as they pass
+        overhead, and it can be picked up with an antenna, an SDR receiver, and free decoding
+        software, no professional ground station required. A friend suggested it as a quick
+        weekend project, and it turned into this.
+      </p>
+      <p style="margin:0">
+        Reception is a timing problem before it is anything else. A satellite is only usable for
+        a few minutes while it is above the horizon, so the pass had to be predicted in advance,
+        elevation, azimuth, duration and frequency, and the antenna pointed and the receiver
+        running before the window opened.
+      </p>
+    </div>
+    <ul class="pts" style="margin-top:20px">
+      <li>Built a receiving antenna and ran it through an SDR receiver</li>
+      <li>Predicted satellite passes for our location, elevation, azimuth, duration and
+      frequency, to know when to listen</li>
+      <li>Decoded the received APT signal into weather images</li>
+    </ul>
+  </section>
+
+  <section class="sec" id="results">
+    <span class="lbl">02</span>
+    <hr class="rule">
+    <h2 class="h-md">Pass Prediction and Decoded Images</h2>
+    <p class="deck">Two decoded passes, same region, different channel processing</p>
+    <p class="sub">
+      Both images are from passes over the Great Lakes and northeastern seaboard, decoded from
+      the live APT signal, not downloaded from NOAA after the fact.
     </p>
-    <p class="note">Build details and screen captures of detected satellite passes to be added.</p>
+    <div class="two">
+      <figure>
+        <div class="bp" style="padding:0">
+          <img src="../assets/satellite-decode-1.jpg" style="width:100%;height:auto"
+               alt="False-colour decoded NOAA APT weather satellite image of the Great Lakes and northeastern United States, showing cloud cover in enhanced colour">
+        </div>
+        <figcaption><b>Decoded pass, enhanced colour.</b> Cloud cover over the Great Lakes and
+        northeastern seaboard.</figcaption>
+      </figure>
+      <figure>
+        <div class="bp" style="padding:0">
+          <img src="../assets/satellite-decode-2.jpg" style="width:100%;height:auto"
+               alt="Natural-colour decoded NOAA APT weather satellite image of the same region, showing cloud cover over the Great Lakes and northeastern United States">
+        </div>
+        <figcaption><b>Decoded pass, natural colour.</b> Same region, a different pass and
+        channel combination.</figcaption>
+      </figure>
+    </div>
+    <figure style="margin-top:24px;max-width:640px">
+      <div class="bp" style="padding:0">
+        <img src="../assets/satellite-pass-prediction.jpg" style="width:100%;height:auto"
+             alt="Screenshot of a satellite pass prediction tool listing NOAA 15, 18 and 19 passes for Toronto, Canada with direction, maximum elevation, local and UTC time, duration and frequency">
+      </div>
+      <figcaption><b>Pass prediction.</b> NOAA 15/18/19 passes for our location, with the
+      elevation, timing and 137 MHz-band frequency used to know when and where to point the
+      antenna.</figcaption>
+    </figure>
+    <p class="note">Antenna and receiver build photos to be added.</p>
   </section>
 
   <div style="padding:0 var(--pad)">

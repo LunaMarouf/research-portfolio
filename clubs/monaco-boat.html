@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Monaco Energy Boat Challenge, mechanical and electrical design | Luna Marouf</title>
+<title>Monaco Energy Boat Challenge, Mechanical and Electrical Design | Luna Marouf</title>
 <meta name="description" content="Luna Marouf worked on Altium PCB schematics for propulsion power circuits, boat CAD, and FEA simulation minimising weight and von Mises stress while maximising safety factor, on the CAN-YU entry to the Monaco Energy Boat Challenge.">
 <meta name="color-scheme" content="light">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
@@ -35,7 +35,7 @@
   <section class="sec" id="what">
     <span class="lbl">01</span>
     <hr class="rule">
-    <h2 class="h-md">What it was</h2>
+    <h2 class="h-md">What It Was</h2>
     <div class="two">
       <p style="margin:0">
         The Monaco Energy Boat Challenge is an international competition for student-built boats
@@ -53,7 +53,7 @@
   <section class="sec" id="electrical">
     <span class="lbl">02</span>
     <hr class="rule">
-    <h2 class="h-md">Electrical design</h2>
+    <h2 class="h-md">Electrical Design</h2>
     <ul class="pts" style="margin-top:0">
       <li>Research supporting propulsion and power-system decisions</li>
       <li>Altium Designer schematic capture for the propulsion system's power circuits</li>
@@ -64,14 +64,74 @@
   <section class="sec" id="mechanical">
     <span class="lbl">03</span>
     <hr class="rule">
-    <h2 class="h-md">Mechanical design</h2>
+    <h2 class="h-md">Mechanical Design</h2>
     <ul class="pts" style="margin-top:0">
       <li>CAD modelling of the boat</li>
       <li>FEA simulation of the hull and structural components</li>
       <li>Design iteration to minimise weight and von Mises stress while maximising safety
       factor</li>
     </ul>
-    <p class="note">CAD renders and FEA results to be added.</p>
+    <div class="g3" style="margin-top:24px">
+      <figure>
+        <div class="bp" style="padding:0">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/mebc-boat-render.jpg" style="width:100%;height:auto"
+               alt="Full CAD render of the CAN-YU catamaran hull, showing the driver seat, steering wheel, battery box, and ePropulsion outboard motor mounted on the aft cross beam"
+               data-cap="Full boat assembly. Twin-hull layout with driver seat, battery box and ePropulsion outboard on the aft cross beam."></button>
+        </div>
+        <figcaption><b>Full boat assembly.</b> Twin-hull catamaran layout, driver station and
+        propulsion mounted on the aft cross beam.</figcaption>
+      </figure>
+      <figure>
+        <div class="bp" style="padding:0">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/mebc-crossbeams-cad.jpg" style="width:100%;height:auto"
+               alt="CAD render of the cross beam structural frame connecting the two hulls, shown isolated in red"
+               data-cap="Cross-beam structure, isolated. The aluminium frame connecting the two hulls and carrying the driver station and propulsion loads."></button>
+        </div>
+        <figcaption><b>Cross-beam structure.</b> The aluminium frame connecting the two hulls,
+        the part the FEA studies below were run on.</figcaption>
+      </figure>
+      <figure>
+        <div class="bp" style="padding:0">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/mebc-propulsion-detail.jpg" style="width:100%;height:auto"
+               alt="Close-up CAD render of the propulsion mount showing the ePropulsion outboard motor, battery box and cross-beam bracket"
+               data-cap="Propulsion mount, detail. ePropulsion outboard motor and battery box on the cross-beam bracket."></button>
+        </div>
+        <figcaption><b>Propulsion mount, detail.</b> Motor and battery mounting on the
+        cross-beam bracket.</figcaption>
+      </figure>
+    </div>
+
+    <h3 class="h-sm" style="margin:32px 0 16px">Cross-Beam FEA</h3>
+    <p class="sub" style="margin-bottom:20px">
+      Five design iterations of the cross-beam, in 6061-T6 aluminium (yield strength 275 MPa),
+      run under the same fixture and remote-load setup to converge on a geometry that carries
+      the load without excess material.
+    </p>
+    <div class="two">
+      <figure>
+        <div class="bp" style="padding:0">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/mebc-fea-stress-study4.png" style="width:100%;height:auto"
+               alt="SolidWorks Simulation von Mises stress plot of the cross beam, study 4, peak stress 107.5 megapascals against a yield strength of 275 megapascals"
+               data-cap="Von Mises stress, Study 4. Peak 1.075e8 N/m^2 (107.5 MPa) against a 275 MPa yield, safety factor 2.6."></button>
+        </div>
+        <figcaption><b>Von Mises stress, Study 4.</b> Peak 107.5 MPa against a 275 MPa yield,
+        safety factor 2.6, the highest-stress iteration of the five.</figcaption>
+      </figure>
+      <figure>
+        <div class="bp" style="padding:0">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/mebc-fea-stress-study3.png" style="width:100%;height:auto"
+               alt="SolidWorks Simulation von Mises stress plot of the cross beam, study 3, peak stress 51.0 megapascals against a yield strength of 275 megapascals"
+               data-cap="Von Mises stress, Study 3. Peak 5.10e7 N/m^2 (51.0 MPa) against a 275 MPa yield, safety factor 5.4."></button>
+        </div>
+        <figcaption><b>Von Mises stress, Study 3.</b> Peak 51.0 MPa, safety factor 5.4, a
+        lighter iteration with more margin.</figcaption>
+      </figure>
+    </div>
+    <p class="note">
+      Safety factor computed as yield strength over peak von Mises stress for each study. The
+      five SLDPRT iterations trade weight against this margin; which one was carried forward to
+      the final design, and the displacement results, to be added.
+    </p>
   </section>
 
   <div style="padding:0 var(--pad)">
