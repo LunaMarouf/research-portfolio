@@ -78,6 +78,31 @@
       <li>Sensor selection and integration work</li>
       <li>Review of the shutdown and interlock circuits</li>
     </ul>
+    <div class="two" style="margin-top:24px">
+      <figure>
+        <div class="bp" style="padding:0">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/fsae-harness-overview.png" style="width:100%;height:auto"
+               alt="Full-car wiring harness routing diagram overlaid on the chassis, labelling wheel speed sensors, shockpots, brake pressure, MoTeC ECU and PDM, dash, ignition, fans and sensor runs at every corner of the car"
+               data-cap="Full-car harness routing over the chassis. Every sensor, actuator and control run labelled corner to corner."></button>
+        </div>
+        <figcaption><b>Harness routing, full car.</b> Wheel speed, shockpots, brake pressure and
+        strain gauges at each corner, run back to the MoTeC ECU and PDM.</figcaption>
+      </figure>
+      <figure>
+        <div class="bp" style="padding:0">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/fsae-engine-wiring.png" style="width:100%;height:auto"
+               alt="Engine harness and ECU wiring schematic showing sensor connections, ECU pinout, ignition coils, fuel injectors, relay block, fuse block, ignition switch and fuel pump wiring"
+               data-cap="Engine harness schematic. Sensor inputs, ECU pin mapping, ignition and fuel injector drive, relay and fuse block, fuel pump circuit."></button>
+        </div>
+        <figcaption><b>Engine harness and ECU I/O.</b> Sensor wiring, ECU pin mapping, and the
+        relay and fuse block feeding ignition and fuel systems.</figcaption>
+      </figure>
+    </div>
+    <p class="note">
+      Sensor set: air temp, coolant temp, throttle position, MAP, wideband O&sub2;, crank and cam
+      position (VR and Hall). Two relays off the fuse block, one for the ECU main supply and one
+      for the fuel pump, both switched from the ignition key through the ECU.
+    </p>
   </section>
 
   <div style="padding:0 var(--pad)">

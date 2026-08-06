@@ -15,6 +15,8 @@
   <nav class="nav">
     <a class="back" href="../"><span class="arw">&larr;</span> Luna Marouf</a>
     <span class="crumb">/ Projects / Heat Transfer</span>
+    <a class="lnk" href="#exchanger">Heat exchanger</a>
+    <a class="lnk" href="#fin">Fin design</a>
     <a class="btn btn-primary" href="mailto:lunam@my.yorku.ca">Contact</a>
   </nav>
 
@@ -47,16 +49,63 @@
     </div>
   </section>
 
-  <section class="sec" id="role">
+  <section class="sec" id="exchanger">
     <span class="lbl">02</span>
     <hr class="rule">
-    <h2 class="h-md">What I Did</h2>
-    <ul class="pts" style="margin-top:0">
-      <li>Heat exchanger sizing and design calculations in Excel</li>
-      <li>Optimal fin design calculations in Excel</li>
-      <li>Wrote up both as design reports</li>
-    </ul>
-    <p class="note">Excel workbooks and design reports to be added.</p>
+    <h2 class="h-md">Heat Exchanger: Oil Cooler, Double-Pipe</h2>
+    <p class="deck">51 valid designs swept, cheapest one that meets every constraint wins</p>
+    <p class="sub">
+      A double-pipe counter-flow exchanger cooling 0.1 kg/s of oil from 150&deg;C to 50&deg;C
+      using 0.265 kg/s of seawater at 10&deg;C, built from Schedule 40 pipe in 6&nbsp;ft sections.
+      Rather than hand-picking a pipe size, I swept every valid NPS pair and pass count against
+      the pressure-drop limit (60 psi per side) and picked the minimum-cost design that still
+      hit the required outlet temperature.
+    </p>
+    <div class="scroll-x">
+      <table class="table">
+        <thead><tr><th scope="col">Parameter</th><th scope="col">Value</th></tr></thead>
+        <tbody>
+          <tr><td>Selected geometry</td><td>1-1/2&Prime; NPS inner (seawater), 2&Prime; NPS outer (oil annulus)</td></tr>
+          <tr><td>Passes / total length</td><td>9 passes, 54 ft</td></tr>
+          <tr><td>Heat duty Q</td><td>23.3 kW</td></tr>
+          <tr><td>Overall U</td><td>135.7 W/m&sup2;K</td></tr>
+          <tr><td>Oil outlet temperature</td><td>45.0&deg;C (required &le;50&deg;C)</td></tr>
+          <tr><td>Seawater outlet temperature</td><td>31.0&deg;C</td></tr>
+          <tr><td>Pressure drop, inner / annulus</td><td>0.04 psi / 28.8 psi (limit 60 psi each)</td></tr>
+          <tr><td>Cost</td><td>$7,574.58, minimum among 51 valid designs swept</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">
+      Design report and the full design-space sweep to be added.
+    </p>
+  </section>
+
+  <section class="sec" id="fin">
+    <span class="lbl">03</span>
+    <hr class="rule">
+    <h2 class="h-md">Optimal Fin Design</h2>
+    <p class="deck">Pin fins beat square fins on a mass basis, not a heat-output basis</p>
+    <p class="sub">
+      A three-part comparison: fin geometry (square vs. pin) across a range of sizes, then fin
+      spacing at fixed geometry, then a head-to-head between the best square and best pin design
+      on heat dissipated per gram of material.
+    </p>
+    <div class="scroll-x">
+      <table class="table">
+        <thead><tr><th scope="col">Design</th><th scope="col">Fin size / spacing</th><th scope="col">q total</th><th scope="col">Mass</th><th scope="col">q/m</th></tr></thead>
+        <tbody>
+          <tr><td>3-B, square array</td><td>6 mm, 2 mm spacing</td><td>111.8 W</td><td>369.1 g</td><td>0.311 W/g</td></tr>
+          <tr><td>9-B, pin array</td><td>6 mm, 2 mm spacing</td><td>111.8 W</td><td>289.9 g</td><td><b>0.386 W/g</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">
+      The pin-fin array matches the square array's heat dissipation at 21% less mass, a 24%
+      better specific performance. Fin spacing was not monotonic for the pin geometry either,
+      2 mm spacing outperformed both tighter and wider spacing in the sweep. Design report to be
+      added.
+    </p>
   </section>
 
   <div style="padding:0 var(--pad)">
