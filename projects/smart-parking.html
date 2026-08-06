@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smart parking guidance with gas sensing | Luna Marouf</title>
+<meta name="description" content="Luna Marouf's course project on a parking lot guidance system built with LabVIEW and Arduino, with an MQ-2 and VOC sensor that triggers a fan above a vehicle-fume threshold.">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<div class="shell">
+
+  <nav class="nav">
+    <a class="back" href="../"><span class="arw">&larr;</span> Luna Marouf</a>
+    <span class="crumb">/ Projects / Smart parking</span>
+    <a class="btn btn-primary" href="mailto:lunam@my.yorku.ca">Contact</a>
+  </nav>
+
+  <div class="hero solo" id="top">
+    <div>
+      <h1 class="h-xl">Smart parking guidance with gas sensing.</h1>
+      <p class="deck" style="margin-top:20px">
+        A parking lot system that guides drivers to vacant spots instead of leaving them to
+        search, with an MQ-2 and VOC sensor pair that switches on a ventilation fan once
+        vehicle-fume levels cross a set threshold.
+      </p>
+      <p style="margin:0;font-size:16px;color:var(--ink-78)">Course project &middot; LabVIEW and Arduino</p>
+    </div>
+  </div>
+
+  <section class="sec" id="what">
+    <span class="lbl">01</span>
+    <hr class="rule">
+    <h2 class="h-md">What it was</h2>
+    <div class="two">
+      <p style="margin:0">
+        The core problem was directing drivers straight to a vacant parking spot rather than
+        having them circle the lot looking for one. A second system layered on top monitors air
+        quality: an MQ-2 gas sensor and a VOC sensor watch for the kind of fume levels a running
+        engine produces, tested in development with a lighter as a stand-in fume source, and once
+        readings cross a threshold a small fan switches on.
+      </p>
+      <p style="margin:0">
+        The vacancy-guidance logic and the gas-sensing and fan control were both built with a
+        combination of LabVIEW for the control and monitoring side and Arduino for the sensor and
+        actuator hardware.
+      </p>
+    </div>
+  </section>
+
+  <section class="sec" id="role">
+    <span class="lbl">02</span>
+    <hr class="rule">
+    <h2 class="h-md">What I did</h2>
+    <ul class="pts" style="margin-top:0">
+      <li>Designed the vacant-spot guidance logic</li>
+      <li>Integrated an MQ-2 gas sensor and a VOC sensor for fume detection</li>
+      <li>Threshold-triggered fan control to ventilate on elevated fume readings</li>
+      <li>Built the control and monitoring system in LabVIEW with Arduino hardware</li>
+    </ul>
+    <p class="note">System diagrams, LabVIEW front panel and demonstration footage to be added.</p>
+  </section>
+
+  <div style="padding:0 var(--pad)">
+    <div style="border-top:1px solid var(--divider);padding:40px 0">
+      <a class="btn btn-secondary" href="../#projects">&larr; All projects</a>
+    </div>
+    <footer class="foot">
+      <span>Luna Marouf</span>
+      <span><a href="mailto:lunam@my.yorku.ca">lunam@my.yorku.ca</a></span>
+    </footer>
+  </div>
+</div>
+</body>
+</html>

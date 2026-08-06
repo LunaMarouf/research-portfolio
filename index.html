@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Luna Marouf | Mechanical engineering, biosensors and medical devices</title>
-<meta name="description" content="Luna Marouf, final-year Honours BEng Mechanical Engineering at York University. Electrochemical biosensors, medical devices and instrumentation.">
+<meta name="description" content="Luna Marouf, final-year Honours BEng Mechanical Engineering at York University. Electrochemical biosensors, filtration membranes, tribology, and course and club projects in medical devices and instrumentation.">
 <meta name="color-scheme" content="light">
 <link rel="stylesheet" href="assets/site.css">
 </head>
@@ -14,7 +14,12 @@
 
   <nav class="nav">
     <a class="mark" href="./"><svg class="logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg>Luna Marouf</a>
-    <a class="lnk" href="#work">Work</a>
+    <a class="lnk" href="#lab-research">Lab research</a>
+    <a class="lnk" href="#projects">Projects</a>
+    <a class="lnk" href="#personal">Personal</a>
+    <a class="lnk" href="#clubs">Clubs</a>
+    <a class="lnk" href="#awards">Awards</a>
+    <a class="lnk" href="#publications">Publications</a>
     <a class="lnk" href="#about">About</a>
     <a class="btn btn-primary" href="mailto:lunam@my.yorku.ca">Contact</a>
   </nav>
@@ -37,7 +42,7 @@
         Open to R&amp;D and internship roles in medical devices, diagnostics and sensing.
       </p>
       <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px">
-        <a class="btn btn-primary" href="projects/biosensors.html">Current research</a>
+        <a class="btn btn-primary" href="#lab-research">Current research</a>
         <a class="btn btn-secondary" href="mailto:lunam@my.yorku.ca">Email</a>
         <a class="btn btn-secondary" href="https://www.linkedin.com/in/luna-marouf" target="_blank" rel="noopener">LinkedIn</a>
         <a class="btn btn-secondary" href="https://github.com/LunaMarouf/electrochemical-biosensor-analysis" target="_blank" rel="noopener">Code</a>
@@ -45,84 +50,98 @@
     </div>
   </div>
 
-  <!-- ============ WORK BY YEAR ============ -->
-  <section class="sec" id="work" style="padding-top:16px">
-    <span class="lbl">Work</span>
+  <!-- ============ LAB RESEARCH ============ -->
+  <section class="sec" id="lab-research" style="padding-top:16px">
+    <span class="lbl">01</span>
     <hr class="rule">
-    <h2 class="h-md">Projects by year</h2>
+    <h2 class="h-md">Lab research</h2>
     <p class="deck">
-      Most recent first. Each entry links to its own page.
+      Across two labs at York University. Electrochemical biosensors at ACuTE, and filtration,
+      coatings and surface tribology at the Freire-Gormaly Lab.
     </p>
 
-    <!-- 2025 to 2026 -->
     <div class="yr">
-      <div class="y">2025 — 2026</div>
+      <div class="y">ACuTE Lab<br><span style="font-weight:400;color:var(--ink-70)">Apr 2025 &ndash; present</span></div>
       <div class="work">
 
-        <a class="card" href="projects/biosensors.html">
+        <a class="card" href="research/sensors-cytochrome-c.html">
+          <div class="thumb"><img src="assets/chip-in-use.jpg" alt="Assembled sensor chip under test with a potentiostat connected"></div>
+          <div>
+            <h3>Cytochrome c detection, straight-channel sensor</h3>
+            <p>
+              A disposable three-electrode chip with sprayed graphene electrodes and a molecularly
+              imprinted polymer film grown around cytochrome c. Full fabrication detail and a
+              measured concentration response, R&sup2; = 0.946.
+            </p>
+            <p class="meta">Measured concentration response · manuscript under review <span class="more">— read more</span></p>
+          </div>
+        </a>
+
+        <a class="card" href="research/sensors-envelope2.html">
           <div class="thumb"><img src="assets/hero-stencil-agagcl.jpg" alt="Stencil panel after the silver silver-chloride spray step"></div>
           <div>
-            <h3>Molecularly imprinted electrochemical sensors for protein detection</h3>
+            <h3>Envelope 2 / HCV detection, circular device <span class="tag tag-accent" style="vertical-align:2px">Active</span></h3>
             <p>
-              Disposable three-electrode chips on a laminate stack, with sprayed graphene
-              electrodes and a polymer film grown around the target protein and then emptied.
-              Two device generations, a measured concentration response for cytochrome c, and the
-              analysis and quality-screening software behind it.
+              The second-generation successor to the cytochrome c platform, a purpose-designed
+              circular electrode targeting the hepatitis C virus Envelope 2 protein. This is
+              where most of my current lab time goes.
             </p>
-            <p class="meta">ACuTE, York University · Apr 2025 to present · first-author manuscript under review <span class="more">— read more</span></p>
+            <p class="meta">Fabrication and baseline characterisation, in progress <span class="more">— read more</span></p>
           </div>
         </a>
 
-        <a class="card plain" href="projects/monaco-boat.html">
+        <a class="card plain" href="research/sensors-lps-lta.html">
           <div>
-            <h3>Monaco Energy Boat Challenge, sensing and control electronics</h3>
+            <h3>LPS/LTA bacterial endotoxin detection</h3>
             <p>
-              Multi-sensor PCB schematics in Altium for propulsion, sensing and control on the
-              CAN-YU entry.
+              A third sensor platform, a graphene straight-channel three-electrode device with a
+              PEDOT:PSS working electrode, targeting the Gram-negative and Gram-positive bacterial
+              markers LPS and LTA.
             </p>
-            <p class="meta">CAN-YU · Jun 2025 to Jul 2026 <span class="more">— read more</span></p>
-          </div>
-        </a>
-
-        <a class="card plain" href="projects/formula-sae.html">
-          <div>
-            <h3>Formula SAE, electrical team lead</h3>
-            <p>
-              Led a nine-member electrical team. Engine harness integration, ECU input and output
-              mapping, and review of the shutdown and interlock circuits.
-            </p>
-            <p class="meta">Lassonde Motorsports · May 2025 to Oct 2025 <span class="more">— read more</span></p>
+            <p class="meta">Design and fabrication stage <span class="more">— read more</span></p>
           </div>
         </a>
 
       </div>
     </div>
 
-    <!-- 2024 to 2025 -->
     <div class="yr">
-      <div class="y">2024 — 2025</div>
+      <div class="y">Freire-Gormaly Lab<br><span style="font-weight:400;color:var(--ink-70)">Apr 2024 &ndash; Aug 2025</span></div>
       <div class="work">
 
-        <a class="card plain" href="projects/membranes.html">
+        <a class="card plain" href="research/membranes-air-filtration.html">
           <div>
-            <h3>Electrospun membranes for air filtration and reverse osmosis coatings</h3>
+            <h3>Electrospun chitosan:PVA membranes for air filtration</h3>
             <p>
-              Electrospun PVA and chitosan membranes produced at 22 to 25 g/m², with a multilevel
-              factorial design in MATLAB used to study the process parameters.
+              Membranes produced at 22 to 25 g/m&sup2; by electrospinning, with solution rheology
+              processed and power-law fit in MATLAB, and a multilevel factorial design relating
+              process parameters to the membrane produced.
             </p>
-            <p class="meta">Freire-Gormaly Lab · Apr 2024 to Aug 2025 <span class="more">— read more</span></p>
+            <p class="meta">Fabrication, rheology and DOE <span class="more">— read more</span></p>
           </div>
         </a>
 
-        <a class="card plain" href="projects/solar-tracker.html">
+        <a class="card plain" href="research/membranes-ro-antifouling.html">
           <div>
-            <h3>Floating dual-axis solar tracker</h3>
+            <h3>Reverse osmosis membrane anti-fouling coatings</h3>
             <p>
-              A pontoon-mounted dual-axis tracker with an Arduino controller and light-sensing
-              feedback. Concept selection by weighted decision matrix, and a rack-and-pinion drive
-              verified against AGMA pitting and bending criteria.
+              Surface coating chemistry to reduce fouling on RO membranes, keeping operating
+              pressure and energy consumption low on a triplicate RO system. Characterised by SEM
+              and FTIR.
             </p>
-            <p class="meta">Design project <span class="more">— read more</span></p>
+            <p class="meta">Coating chemistry and characterisation <span class="more">— read more</span></p>
+          </div>
+        </a>
+
+        <a class="card plain" href="research/tribology-graphene.html">
+          <div>
+            <h3>Wear resistance of graphene coatings on aluminium</h3>
+            <p>
+              Tribometer testing of several graphene coating types, comparing coefficient of
+              static friction and wear-track depth, with applied writeups on graphene coatings for
+              tires and rotary blades.
+            </p>
+            <p class="meta">Tribology testing and analysis <span class="more">— read more</span></p>
           </div>
         </a>
 
@@ -130,9 +149,172 @@
     </div>
   </section>
 
+  <!-- ============ PROJECTS ============ -->
+  <section class="sec" id="projects">
+    <span class="lbl">02</span>
+    <hr class="rule">
+    <h2 class="h-md">Projects</h2>
+    <p class="deck">Course design projects, most recent first.</p>
+    <div class="work">
+
+      <a class="card plain" href="projects/solar-tracker.html">
+        <div>
+          <h3>Floating dual-axis solar tracker</h3>
+          <p>
+            A pontoon-mounted dual-axis tracker with an Arduino controller and light-sensing
+            feedback. Concept selection by weighted decision matrix, and a rack-and-pinion drive
+            verified against AGMA pitting and bending criteria.
+          </p>
+          <p class="meta">Mini Design Project 2 <span class="more">— read more</span></p>
+        </div>
+      </a>
+
+      <a class="card plain" href="projects/rc-medical-car.html">
+        <div>
+          <h3>RC medical-use car, 4-gear drivetrain</h3>
+          <p>
+            A 3D-printed remote-controlled car for medical use, with a 4-gear drivetrain,
+            steering and control programming. Machined the shaft holes on the lathe and mill.
+          </p>
+          <p class="meta">Mini Design Project 1 <span class="more">— read more</span></p>
+        </div>
+      </a>
+
+      <a class="card plain" href="projects/smart-parking.html">
+        <div>
+          <h3>Smart parking guidance with gas sensing</h3>
+          <p>
+            Guides drivers to vacant parking spots, with an MQ-2 and VOC sensor pair that
+            triggers a ventilation fan above a set vehicle-fume threshold. Built with LabVIEW and
+            Arduino.
+          </p>
+          <p class="meta">Course project <span class="more">— read more</span></p>
+        </div>
+      </a>
+
+      <a class="card plain" href="projects/cold-storage.html">
+        <div>
+          <h3>Cold storage facility design for Ontario berries</h3>
+          <p>
+            A &minus;18&deg;C cold storage facility for individually quick frozen berries, 30 to
+            365 day storage life, designed in CoolSelector.
+          </p>
+          <p class="meta">Thermodynamics 2 <span class="more">— read more</span></p>
+        </div>
+      </a>
+
+      <a class="card plain" href="projects/heat-transfer.html">
+        <div>
+          <h3>Heat exchanger and optimal fin design</h3>
+          <p>
+            Two design assignments, heat exchanger sizing and optimal fin design, both worked
+            through analytically in Microsoft Excel.
+          </p>
+          <p class="meta">Heat Transfer <span class="more">— read more</span></p>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ============ PERSONAL ============ -->
+  <section class="sec" id="personal">
+    <span class="lbl">03</span>
+    <hr class="rule">
+    <h2 class="h-md">Personal</h2>
+    <div class="work">
+      <a class="card plain" href="personal/satellite-antenna.html">
+        <div>
+          <h3>Satellite-tracking antenna</h3>
+          <p>
+            Built with a friend outside of coursework or lab work, an antenna setup that detects
+            and tracks satellites overhead.
+          </p>
+          <p class="meta">Personal project <span class="more">— read more</span></p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ CLUBS ============ -->
+  <section class="sec" id="clubs">
+    <span class="lbl">04</span>
+    <hr class="rule">
+    <h2 class="h-md">Clubs</h2>
+    <div class="work">
+
+      <a class="card plain" href="clubs/formula-sae.html">
+        <div>
+          <h3>Lassonde Motorsports, Formula SAE</h3>
+          <p>
+            Research and development member, then electrical team lead managing a nine-member
+            subteam through engine harness integration, ECU I/O mapping and sensor work.
+          </p>
+          <p class="meta">May 2025 to Oct 2025 <span class="more">— read more</span></p>
+        </div>
+      </a>
+
+      <a class="card plain" href="clubs/monaco-boat.html">
+        <div>
+          <h3>Monaco Energy Boat Challenge (MEBC)</h3>
+          <p>
+            Mechanical and electrical team member. Altium schematics for propulsion power
+            circuits, boat CAD, and FEA to minimise weight and von Mises stress while maximising
+            safety factor.
+          </p>
+          <p class="meta">Jun 2025 to Jul 2026 <span class="more">— read more</span></p>
+        </div>
+      </a>
+
+      <a class="card plain" href="clubs/oes-biomedical.html">
+        <div>
+          <h3>Ontario Engineering Society, biomedical competition lead</h3>
+          <p>
+            Designed the competition package for the biomedical event. The competition itself did
+            not run due to scheduling issues.
+          </p>
+          <p class="meta">Competition lead <span class="more">— read more</span></p>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ============ AWARDS ============ -->
+  <section class="sec" id="awards">
+    <span class="lbl">05</span>
+    <hr class="rule">
+    <h2 class="h-md">Awards</h2>
+    <ul class="pubs">
+      <li class="live"><b>ASHRAE scholarship</b><span>American Society of Heating, Refrigerating and Air-Conditioning Engineers.</span></li>
+      <li class="live"><b>ASHRAE scholarship</b><span>American Society of Heating, Refrigerating and Air-Conditioning Engineers.</span></li>
+    </ul>
+    <a class="btn btn-ghost" href="awards.html">Full list →</a>
+  </section>
+
+  <!-- ============ PUBLICATIONS ============ -->
+  <section class="sec" id="publications">
+    <span class="lbl">06</span>
+    <hr class="rule">
+    <h2 class="h-md">Publications</h2>
+    <ul class="pubs">
+      <li class="live">
+        <b>Sprayed graphene molecularly imprinted electrochemical cytochrome c sensor
+          <span class="tag tag-accent" style="margin-left:6px;vertical-align:2px">Peer review, submitted</span></b>
+        <span>L. Marouf, A. Doostmohammadi, P. Rezai. First author. IEEE SENSORS 2026, submitted 30 June 2026.</span>
+      </li>
+      <li>
+        <b>Molecularly imprinted polymer-based electrochemical sensor for cytochrome c detection
+          <span class="tag tag-outline" style="margin-left:6px;vertical-align:2px">Presented</span></b>
+        <span>L. Marouf, A. Doostmohammadi, P. Rezai. Health Research Conference, 2026.</span>
+      </li>
+    </ul>
+    <a class="btn btn-ghost" href="publications.html">Full list →</a>
+  </section>
+
   <!-- ============ ABOUT ============ -->
   <section class="sec" id="about">
-    <span class="lbl">About</span>
+    <span class="lbl">07</span>
     <hr class="rule">
     <h2 class="h-md">Background</h2>
     <div class="two">
@@ -155,11 +337,11 @@
       <div class="bp" style="padding:22px">
         <h3 class="h-sm" style="margin-bottom:14px">Tools and methods</h3>
         <dl class="kv">
-          <div><dt>Fabrication</dt><dd>SolidWorks · laser cutting · spray coating · PSA lamination · electrospinning</dd></div>
+          <div><dt>Fabrication</dt><dd>SolidWorks · laser cutting · spray coating · PSA lamination · electrospinning · lathe and mill</dd></div>
           <div><dt>Electrochemistry</dt><dd>Cyclic voltammetry · differential pulse voltammetry · electrochemical impedance spectroscopy · chronoamperometry · PSTrace</dd></div>
-          <div><dt>Characterisation</dt><dd>SEM · EDS · upright optical microscopy</dd></div>
-          <div><dt>Analysis</dt><dd>Python · MATLAB · Git · design of experiments, Taguchi and multilevel factorial</dd></div>
-          <div><dt>Electronics</dt><dd>Altium PCB schematic capture · Arduino · harness integration · ECU input and output mapping</dd></div>
+          <div><dt>Characterisation</dt><dd>SEM · EDS · FTIR · upright optical microscopy · tribometry</dd></div>
+          <div><dt>Analysis</dt><dd>Python · MATLAB · Microsoft Excel · Git · design of experiments, Taguchi and multilevel factorial</dd></div>
+          <div><dt>Electronics</dt><dd>Altium PCB schematic capture · Arduino · LabVIEW · harness integration · ECU input and output mapping</dd></div>
           <div><dt>Quality</dt><dd>Design control practice · verification and validation · defect-to-failure-mode mapping · root-cause analysis</dd></div>
         </dl>
       </div>
@@ -173,7 +355,7 @@
           p. 2732, 2025.</li>
           <li>Two conference abstracts and six research presentations in total.</li>
         </ul>
-        <a class="btn btn-ghost" href="projects/biosensors.html#output">Full list →</a>
+        <a class="btn btn-ghost" href="publications.html">Full list →</a>
       </div>
     </div>
   </section>

@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Envelope 2 / HCV electrochemical sensor, circular device | Luna Marouf</title>
+<meta name="description" content="Luna Marouf is developing a circular molecularly imprinted electrochemical sensor for the hepatitis C virus Envelope 2 protein at ACuTE, York University, the second-generation successor to the straight-channel cytochrome c platform.">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<div class="shell">
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav">
+    <a class="back" href="../"><span class="arw">&larr;</span> Luna Marouf</a>
+    <span class="crumb">/ Lab research / ACuTE / Envelope 2</span>
+    <a class="lnk" href="#problem">Problem</a>
+    <a class="lnk" href="#device">Device</a>
+    <a class="lnk" href="#baseline">Baseline</a>
+    <a class="lnk" href="#quality">Quality</a>
+    <a class="lnk" href="#status">Status</a>
+    <a class="btn btn-primary" href="mailto:lunam@my.yorku.ca">Contact</a>
+  </nav>
+
+  <!-- ============ IDENTITY ============ -->
+  <div class="hero solo" id="top">
+    <div>
+      <span class="tag tag-accent" style="margin-bottom:16px;display:inline-block">Active development</span>
+      <h1 class="h-xl">Circular-channel electrochemical sensor for Envelope 2 / HCV detection.</h1>
+      <p style="margin:20px 0 0;font-size:17px;max-width:52ch;color:var(--ink-78)">
+        The second-generation successor to the straight-channel cytochrome c platform, targeting
+        the hepatitis C virus Envelope 2 protein on a purpose-designed circular device. This is
+        the project I am currently spending most of my lab time on.
+      </p>
+      <p style="margin:16px 0 0;font-size:16px">
+        <b>Luna Marouf.</b> Biosensor project lead, ACuTE, York University, from April 2025.
+      </p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px">
+        <a class="btn btn-primary" href="sensors-cytochrome-c.html">See the cytochrome c platform</a>
+        <a class="btn btn-secondary" href="mailto:lunam@my.yorku.ca">Email</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 01 PROBLEM ============ -->
+  <section class="sec" id="problem">
+    <span class="lbl">01</span>
+    <hr class="rule">
+    <h2 class="h-md">Why a second device</h2>
+    <div class="two">
+      <p style="margin:0">
+        The straight-channel cytochrome c sensor proved the imprinting and fabrication route end
+        to end, but its electrode geometry was never optimised, it grew out of what was
+        practical to lay out first. Envelope 2 is a structural glycoprotein on the hepatitis C
+        virus surface, and a working sensor for it is a more clinically relevant target than
+        cytochrome c, which is a general liver-damage marker rather than an HCV-specific one.
+      </p>
+      <p style="margin:0">
+        Rather than reuse the straight-channel mask, the circular device was designed from the
+        electrode geometry up. A 3 mm circular working electrode gives uniform current
+        distribution across its area, the counter electrode is oversized so current is never
+        limited there, and the reference is placed close in to minimise iR drop. It is built on
+        the same batch spray-fabrication process as the first device, not a hand-made one-off.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ 02 DEVICE ============ -->
+  <section class="sec" id="device">
+    <span class="lbl">02</span>
+    <hr class="rule">
+    <h2 class="h-md">Device architecture and fabrication</h2>
+    <p class="deck">Designed rather than improvised</p>
+    <p class="sub">
+      Masks laser cut on an Epilog Fusion Pro 17000 at 65% speed and 15% power on medium-tack
+      PSA, then sprayed in panels. Graphene through a 0.5 mm nozzle, Ag/AgCl through 0.8 mm, both
+      at 4 bar and 23 L/min.
+    </p>
+    <div class="g3">
+      <figure>
+        <div class="bp" style="padding:0">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/hero-stencil-agagcl.jpg" style="width:100%;height:auto"
+               alt="Stencil panel after the silver silver-chloride spray step, a repeating grid of electrode-shaped cut-outs"
+               data-cap="Ag/AgCl spray step. The second pass lays the pseudo-reference across a full stencil panel of nominally identical devices."></button>
+        </div>
+        <figcaption><b>Batch fabrication.</b> The second spray pass lays the Ag/AgCl
+        pseudo-reference across a full stencil panel of nominally identical devices, not a
+        hand-made one-off.</figcaption>
+      </figure>
+      <figure>
+        <div class="bp" style="padding:12px">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/solidworks-sketch.png" style="width:100%;height:auto"
+               alt="Dimensioned SolidWorks sketch of the circular electrode layout"
+               data-cap="SolidWorks sketch of the circular electrode layout, fully dimensioned. 3 mm circular working electrode, 5.00 mm pad pitch."></button>
+        </div>
+        <figcaption><b>Circular layout.</b> Dimensioned in SolidWorks, with electrode spacing
+        traded off against diffusion-layer overlap and fabrication tolerance.</figcaption>
+      </figure>
+      <figure>
+        <div class="bp" style="padding:0">
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/chip-in-use.jpg" style="width:100%;height:auto"
+               alt="Assembled white PMMA chip during an experiment, with a yellow probe droplet in the circular sensing window and three coloured potentiostat leads clipped to the contact pads"
+               data-cap="Circular device during an electrochemical experiment. Probe droplet in the sensing window, potentiostat clips on the three contact pads."></button>
+        </div>
+        <figcaption><b>The device under test.</b> Ferri/ferrocyanide probe droplet in the sensing
+        window, potentiostat leads on the three contact pads.</figcaption>
+      </figure>
+    </div>
+    <p class="note">
+      Full layer-stack detail and spray parameters follow the same process as the straight-channel
+      device, see <a href="sensors-cytochrome-c.html#gen1">the cytochrome c fabrication
+      section</a>. Quality screening for this device is covered below.
+    </p>
+  </section>
+
+  <!-- ============ 03 BASELINE ============ -->
+  <section class="sec" id="baseline">
+    <span class="lbl">03</span>
+    <hr class="rule">
+    <h2 class="h-md">Baseline electrochemical characterisation</h2>
+    <p class="deck">Characterising the cell before running an analyte on it</p>
+    <p class="sub">
+      One representative result per technique, each the mean of three runs, on Devices 1, 6 and
+      7. These characterise the empty cell, not an Envelope 2 response. No Envelope 2
+      concentration response has been measured yet.
+    </p>
+    <div class="g3">
+      <figure>
+        <div class="bp" style="padding:12px">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/eis-nyquist.png"
+               alt="Nyquist plot showing a charge transfer semicircle and a rising low frequency tail"
+               data-cap="EIS Nyquist plot, Device 6, mean of three runs. 5 mM ferri/ferrocyanide, 0.1 M KCl, 0.20 V DC bias, 10 mV AC, 50 kHz to 0.1 Hz."></button>
+        </div>
+        <figcaption><b>Impedance.</b> Device 6. Uncompensated resistance near 0.50 kΩ, charge
+        transfer near 0.45 kΩ, with a low-frequency mass-transport tail.</figcaption>
+      </figure>
+      <figure>
+        <div class="bp" style="padding:12px">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/dpv-peak.png"
+               alt="Differential pulse voltammogram with the oxidation peak marked and annotated"
+               data-cap="DPV, Device 1, mean of three runs, faradaic-only peak marked."></button>
+        </div>
+        <figcaption><b>Differential pulse voltammetry.</b> Device 1. E<sub>p,ox</sub> = 0.162 V,
+        I<sub>p,ox</sub> = 33.42 ± 1.22 µA.</figcaption>
+      </figure>
+      <figure>
+        <div class="bp" style="padding:12px">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/mpd-vs-pbs.png"
+               alt="Two overlaid current potential traces comparing a PBS blank with the mPD solution"
+               data-cap="Linear sweep, Device 7. PBS blank against 20 mM m-PD, showing monomer oxidation onset."></button>
+        </div>
+        <figcaption><b>Monomer, not background.</b> Device 7. m-PD oxidation onset near 0.30 V
+        rising to about 31 µA while the blank stays under 11 µA.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ 04 QUALITY ============ -->
+  <section class="sec" id="quality">
+    <span class="lbl">04</span>
+    <hr class="rule">
+    <h2 class="h-md">Quality assurance, examples of rejected devices</h2>
+    <p class="deck">Deciding which chips are worth testing</p>
+    <p class="sub">
+      Electrochemical testing is slow and reagents are finite, so every device is inspected under
+      the microscope first. Three rejection triggers are applied, one example of each shown below.
+      Ag/AgCl contamination on the working electrode, reference-electrode breakage or
+      non-uniformity, and conductive contact between the working and reference electrodes. An
+      accepted device is shown in <a href="#traceability">section 05</a>.
+    </p>
+    <div class="g3">
+      <figure>
+        <div class="bp" style="padding:0">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/reject-short.jpg" style="width:100%;height:auto"
+               alt="Micrograph showing conductive contact between the working and reference electrodes"
+               data-cap="Rejected. Conductive contact between the working and reference electrodes, a short-circuit risk. 200 µm bar."></button>
+        </div>
+        <figcaption><b class="no">Rejected.</b> Short-circuit risk between working and reference.</figcaption>
+      </figure>
+      <figure>
+        <div class="bp" style="padding:0">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/reject-ref-break.jpg" style="width:100%;height:auto"
+               alt="Micrograph showing reference electrode breakage and non-uniformity"
+               data-cap="Rejected. Reference-electrode breakage and non-uniformity, plus deposits on the working electrode. 200 µm bar."></button>
+        </div>
+        <figcaption><b class="no">Rejected.</b> Reference breakage and non-uniformity.</figcaption>
+      </figure>
+      <figure>
+        <div class="bp" style="padding:0">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/device-rejected.jpg" style="width:100%;height:auto"
+               alt="Micrograph showing heavy contamination along the working electrode edge"
+               data-cap="Rejected. Heavy contamination smeared along the working electrode edge and reference track. 200 µm bar."></button>
+        </div>
+        <figcaption><b class="no">Rejected.</b> Heavy working-electrode contamination.</figcaption>
+      </figure>
+    </div>
+    <p class="note">
+      Screening is an aid, not a validated defect classifier. Devices it keeps still go through dry
+      isolation and continuity checks, open circuit potential stability, and full electrochemical
+      validation before any result is trusted.
+    </p>
+  </section>
+
+  <!-- ============ 05 TRACEABILITY ============ -->
+  <section class="sec" id="traceability">
+    <span class="lbl">05</span>
+    <hr class="rule">
+    <h2 class="h-md">The curve and the device it came from</h2>
+    <p class="deck">Every number is traceable to an inspected device</p>
+    <p class="sub">
+      The screening gate only means something if the data that gets published comes from devices
+      that passed it. These three belong together. An approved device, the voltammogram it
+      produced, and the process record of how its film was grown.
+    </p>
+    <div class="g3">
+      <figure>
+        <div class="bp" style="padding:0">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/device-accepted.jpg" style="width:100%;height:auto"
+               alt="Brightfield micrograph of the approved circular device at 1.6 times magnification"
+               data-cap="The approved device. 1.6X, 200 µm bar."></button>
+        </div>
+        <figcaption><b>1. The inspected device.</b> Passed the screening in section 04 and was
+        dispositioned as accepted. 1.6X, 200 µm bar.</figcaption>
+      </figure>
+      <figure>
+        <div class="bp" style="padding:12px">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/cv-mean-sd.png"
+               alt="Cyclic voltammogram showing a mean trace with a shaded standard deviation band"
+               data-cap="Mean CV over three scans with a ±1 SD band, showing the three characteristic peaks."></button>
+        </div>
+        <figcaption><b>2. Its voltammogram.</b> Mean of three scans with a ±1 SD band. Three
+        characteristic peaks near −0.2, 0.12 and 0.55 V.</figcaption>
+      </figure>
+      <figure>
+        <div class="bp" style="padding:12px">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/chronoamperometry.png"
+               alt="Chronoamperometry current decay with the operational plateau onset marked"
+               data-cap="Chronoamperometric electropolymerisation for Device 16 at 0.35 V, initial valid peak 6.04 µA, plateau onset 15.9 s at 4.81 µA."></button>
+        </div>
+        <figcaption><b>3. Its process record.</b> Device 16. Film growth stopped by charge, not by
+        a timer, so every device gets the same film.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ 06 STATUS ============ -->
+  <section class="sec" id="status">
+    <span class="lbl">06</span>
+    <hr class="rule">
+    <h2 class="h-md">Current status and what's next</h2>
+    <p class="deck">This is the live part of the platform</p>
+    <div class="two">
+      <div>
+        <h4 style="margin:0 0 6px;font-size:16px">Done so far</h4>
+        <ul class="pts" style="margin-top:8px">
+          <li>Circular electrode geometry designed and fabricated in batch panels</li>
+          <li>Baseline EIS, DPV and linear sweep characterisation across multiple devices</li>
+          <li>Monomer oxidation onset confirmed against a blank, ready for PmPD film growth</li>
+          <li>Quality-screening applied using the same microscopy pipeline as the straight-channel
+          device, see sections 04 and 05 above</li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="margin:0 0 6px;font-size:16px">In progress</h4>
+        <ul class="pts" style="margin-top:8px">
+          <li>Growing and characterising the Envelope 2 imprinted film on the circular geometry</li>
+          <li>Establishing a concentration response for Envelope 2, the same way the cytochrome c
+          calibration curve was built</li>
+          <li>Comparing signal-off behaviour and variance against the straight-channel platform to
+          see whether the geometry change actually helps</li>
+          <li>Second manuscript in preparation, covering this device</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note">
+      This page will be updated as results come in. Nothing here reports an Envelope 2
+      concentration response yet, that is the open question this device exists to answer.
+    </p>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <div style="padding:0 var(--pad)" id="contact">
+    <div style="border-top:1px solid var(--divider);padding:36px 0">
+      <a class="btn btn-secondary" href="../#lab-research">&larr; All lab research</a>
+    </div>
+    <footer class="foot">
+      <span>Luna Marouf · Research conducted at ACuTE, York University</span>
+      <span><a href="https://github.com/LunaMarouf/electrochemical-biosensor-analysis" target="_blank" rel="noopener">Analysis code</a></span>
+    </footer>
+  </div>
+
+</div>
+
+<dialog id="lb" aria-label="Enlarged figure">
+  <button class="x" type="button" aria-label="Close figure">&times;</button>
+  <div class="inner">
+    <div>
+      <img id="lb-img" src="" alt="">
+      <p id="lb-cap"></p>
+    </div>
+  </div>
+</dialog>
+
+<script>
+(function(){
+  var lb=document.getElementById('lb'),
+      img=document.getElementById('lb-img'),
+      cap=document.getElementById('lb-cap');
+  document.querySelectorAll('button.zoombtn').forEach(function(btn){
+    var el=btn.querySelector('img');
+    if(!el) return;
+    btn.setAttribute('aria-label','Enlarge figure. '+(el.getAttribute('alt')||''));
+    btn.addEventListener('click',function(){
+      img.src=el.getAttribute('src');
+      img.alt=el.getAttribute('alt')||'';
+      cap.textContent=el.getAttribute('data-cap')||'';
+      if(lb.showModal) lb.showModal(); else lb.setAttribute('open','');
+    });
+  });
+  function close(){ if(lb.open){ lb.close ? lb.close() : lb.removeAttribute('open'); } }
+  lb.addEventListener('click',function(e){ if(e.target!==img) close(); });
+  lb.addEventListener('close',function(){ img.src=''; });
+})();
+</script>
+
+</body>
+</html>
