@@ -59,7 +59,78 @@
       storage life</li>
       <li>Accounted for humidity control and energy efficiency in the operating parameters</li>
     </ul>
-    <p class="note">CoolSelector outputs and the design report to be added.</p>
+  </section>
+
+  <section class="sec" id="coolselector">
+    <span class="lbl">03</span>
+    <hr class="rule">
+    <h2 class="h-md">CoolSelector Diagrams and Refrigerant Comparison</h2>
+    <p class="deck">R134a as a baseline, R452A as a lower-GWP alternative, same operating conditions</p>
+    <p class="sub">
+      The cycle was modelled in CoolSelector against a fixed set of design conditions, then
+      re-run with the refrigerant swapped from R134a to R452A to compare performance and
+      environmental impact under an identical system.
+    </p>
+
+    <div class="scroll-x">
+      <table class="table">
+        <thead><tr><th scope="col">Parameter</th><th scope="col">Value</th></tr></thead>
+        <tbody>
+          <tr><td>Cold room temperature</td><td>&minus;18&deg;C</td></tr>
+          <tr><td>Cooling load</td><td>2191 W</td></tr>
+          <tr><td>Evaporating temperature (dew point)</td><td>245 K</td></tr>
+          <tr><td>Condensing temperature (dew point)</td><td>310 K</td></tr>
+          <tr><td>Superheat</td><td>14 K</td></tr>
+          <tr><td>Subcooling</td><td>5 K</td></tr>
+          <tr><td>Expansion device</td><td>Thermostatic expansion valve</td></tr>
+          <tr><td>Condenser type</td><td>Air-cooled, indoor</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="h-sm" style="margin:32px 0 16px">Pressure-Enthalpy Diagrams</h3>
+    <div class="two">
+      <figure>
+        <div class="bp" style="padding:8px">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/coldstorage-ph-r134a.png" style="width:100%;height:auto"
+               alt="CoolSelector pressure-enthalpy diagram for the refrigeration cycle using R134a"
+               data-cap="Pressure-enthalpy diagram for the cycle using R134a, generated in CoolSelector."></button>
+        </div>
+        <figcaption><b>R134a.</b> The baseline refrigerant.</figcaption>
+      </figure>
+      <figure>
+        <div class="bp" style="padding:8px">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/coldstorage-ph-r452a.png" style="width:100%;height:auto"
+               alt="CoolSelector pressure-enthalpy diagram for the refrigeration cycle using R452A"
+               data-cap="Pressure-enthalpy diagram for the same cycle using R452A, generated in CoolSelector."></button>
+        </div>
+        <figcaption><b>R452A.</b> Lower-GWP alternative, same system and conditions.</figcaption>
+      </figure>
+    </div>
+
+    <h3 class="h-sm" style="margin:32px 0 16px">Performance Comparison</h3>
+    <div class="scroll-x">
+      <table class="table">
+        <thead><tr><th scope="col">Parameter</th><th scope="col">R134a</th><th scope="col">R452A</th></tr></thead>
+        <tbody>
+          <tr><td>Cooling capacity</td><td>372 W</td><td>1783 W</td></tr>
+          <tr><td>Compressor power</td><td>447 W</td><td>1601 W</td></tr>
+          <tr><td>COP</td><td>0.83</td><td>1.11</td></tr>
+          <tr><td>Mass flow rate</td><td>0.00269 kg/s</td><td>0.01734 kg/s</td></tr>
+          <tr><td>Evaporating pressure</td><td>92 050 Pa</td><td>215 000 Pa</td></tr>
+          <tr><td>Condensing pressure</td><td>933 000 Pa</td><td>1 300 000 Pa</td></tr>
+          <tr><td>GWP</td><td>1430</td><td>2140</td></tr>
+          <tr><td>Safety class</td><td>A1</td><td>A1</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">
+      R452A ran at a higher COP under these conditions, 1.11 against 0.83, but at substantially
+      higher evaporating and condensing pressures, which pushes back on compressor and
+      component sizing. GWP came out higher for R452A in this comparison (2140 against 1430),
+      so the efficiency gain here is a system-design trade-off against R134a, not a
+      straightforwardly better refrigerant on every axis.
+    </p>
   </section>
 
   <div style="padding:0 var(--pad)">

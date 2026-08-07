@@ -82,6 +82,22 @@
       </div>
     </div>
 
+    <h3 class="h-sm" style="margin:32px 0 16px">Building the Rig</h3>
+    <p class="sub">
+      The frame and collector were built from scratch, not bought as a kit. Aluminium stands were
+      cut to length on a saw and bolted together with angle brackets, with gaskets at the joints
+      to damp vibration during operation. The collector itself is a cylindrical aluminium drum,
+      wrapped in fresh foil before every run so the finished membrane lifts off cleanly.
+    </p>
+    <p class="sub">
+      Driving the collector is a purpose-built e-box that isolates the control electronics from
+      the high-voltage side of the rig: an Arduino Uno, an L298N motor driver (a motor shield was
+      used on one build), and a NEMA-17 stepper. Firmware written in C# spins the collector
+      continuously for up to 36 hours while the syringe pump runs at a fixed flow rate set from a
+      separate Taguchi-designed screening, distinct from the full-factorial study below.
+    </p>
+    <p class="note">A CAD render of the rig, which I built but did not design in CAD, is still pending and will be added here.</p>
+
     <h3 class="h-sm" style="margin:32px 0 16px">Full Factorial Design of Experiments</h3>
     <p class="sub" style="margin-bottom:20px">
       Four spinning parameters at three or four levels each, run as a full factorial rather than

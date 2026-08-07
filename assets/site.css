@@ -13,8 +13,8 @@
     --divider-soft:rgba(22,24,27,.09);
     --ink-70:rgba(22,24,27,.70);
     --ink-78:rgba(22,24,27,.78);
-    --font-heading:Arial,"Helvetica Neue",Helvetica,"Liberation Sans","Nimbus Sans",sans-serif;
-    --font-body:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --font-heading:"Times New Roman",Times,Georgia,"Liberation Serif",serif;
+    --font-body:"Times New Roman",Times,Georgia,"Liberation Serif",serif;
     --mono:ui-monospace,SFMono-Regular,Menlo,"Cascadia Mono",Consolas,"Liberation Mono","DejaVu Sans Mono",monospace;
     --pad:48px;
   }
@@ -130,8 +130,13 @@
     display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:40px;
     align-items:center;padding:56px var(--pad) 48px;
   }
-  .hero.solo{grid-template-columns:1fr;padding-bottom:40px}
-  .hero.solo h1{max-width:26ch}
+  .hero.solo{grid-template-columns:1fr;padding-bottom:40px;text-align:center}
+  .hero.solo h1{max-width:26ch;margin-left:auto;margin-right:auto}
+  .hero.solo .deck{margin-left:auto;margin-right:auto}
+
+  /* ---------- centered section intros (label + heading + deck only; bodies stay left-aligned) ---------- */
+  .sec>.lbl:first-child,.sec>h2.h-md{text-align:center}
+  .sec>p.deck{text-align:center;margin-left:auto;margin-right:auto}
   .two{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
   .two>p{max-width:52ch}
   .split-75{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:32px;align-items:start}
@@ -287,7 +292,7 @@
   @media(max-width:760px){ .yr{grid-template-columns:1fr;gap:12px} }
   .work{display:grid;gap:20px}
   .work a.card{
-    display:grid;grid-template-columns:150px minmax(0,1fr);gap:20px;align-items:start;
+    display:grid;grid-template-columns:230px minmax(0,1fr);gap:20px;align-items:start;
     text-decoration:none;color:inherit;padding:16px;margin:-16px;
     border:1px solid transparent;transition:border-color .14s,background .14s;
   }

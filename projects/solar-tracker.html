@@ -93,6 +93,39 @@
     </div>
   </section>
 
+  <section class="sec" id="cad">
+    <span class="lbl">05</span>
+    <hr class="rule">
+    <h2 class="h-md">CAD and Simulation</h2>
+    <p class="deck">The gear train behind the rack-and-pinion drive, checked under load</p>
+    <div class="g3">
+      <figure>
+        <div class="bp" style="padding:8px">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/solar-tracker-gearbox-cad.png" style="width:100%;height:auto"
+               alt="Exploded SolidWorks assembly drawing of the drive gearbox, with a numbered parts table listing motor, input gear, layshaft gear, sliders, shafts, reverse shaft and gear, and connector gears"
+               data-cap="Exploded gearbox assembly. Motor through input gear, layshaft gear, sliders, shafts, reverse shaft and gear, and the connector gears that drive the rack and pinion."></button>
+        </div>
+        <figcaption><b>Gearbox, exploded.</b> Thirteen numbered parts from motor to output gear.</figcaption>
+      </figure>
+      <figure>
+        <div class="bp" style="padding:8px">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/solar-tracker-fea-displacement.jpg" style="width:100%;height:auto"
+               alt="FEA displacement contour plot of the drive collar under load, showing peak URES displacement at the motor mount"
+               data-cap="Displacement study on the drive collar, load applied at the mounting points. Peak URES of 7.826e-3 mm at the motor mount, dropping to near zero at the bolted points."></button>
+        </div>
+        <figcaption><b>Displacement.</b> Peak deflection at the motor mount, negligible at the bolted points.</figcaption>
+      </figure>
+      <figure>
+        <div class="bp" style="padding:8px">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/solar-tracker-fea-vonmises.jpg" style="width:100%;height:auto"
+               alt="Von Mises stress contour plot of the mounting bracket under load, with the concentration at the inner corner fillet"
+               data-cap="Von Mises stress on the mounting bracket, same load case. Stress concentrates at the inner corner fillet, well clear of the material yield limit."></button>
+        </div>
+        <figcaption><b>Von Mises stress.</b> Concentrates at the bracket's inner fillet, the usual place to check first.</figcaption>
+      </figure>
+    </div>
+  </section>
+
   <div style="padding:0 var(--pad)">
     <div style="border-top:1px solid var(--divider);padding:40px 0">
       <a class="btn btn-secondary" href="../#projects">&larr; All projects</a>

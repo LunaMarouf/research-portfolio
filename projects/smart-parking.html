@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Smart Parking Guidance with Gas Sensing | Luna Marouf</title>
-<meta name="description" content="Luna Marouf's course project on a parking lot guidance system built with LabVIEW and Arduino, with an MQ-2 and VOC sensor that triggers a fan above a vehicle-fume threshold.">
+<title>Engineered Parking, Smart Parking Guidance with Gas Sensing | Luna Marouf</title>
+<meta name="description" content="Luna Marouf's Engineered Parking course project: a LabVIEW and Arduino smart parking system with LDR-based column vacancy detection, servo gates, and an independent MQ-2 ventilation circuit.">
 <meta name="color-scheme" content="light">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../assets/site.css">
@@ -15,18 +15,22 @@
   <nav class="nav">
     <a class="back" href="../"><span class="arw">&larr;</span> Luna Marouf</a>
     <span class="crumb">/ Projects / Smart Parking</span>
+    <a class="lnk" href="#what">Overview</a>
+    <a class="lnk" href="#logic">Logic</a>
+    <a class="lnk" href="#build">Build</a>
+    <a class="lnk" href="#challenges">Challenges</a>
     <a class="btn btn-primary" href="mailto:lunam@my.yorku.ca">Contact</a>
   </nav>
 
   <div class="hero solo" id="top">
     <div>
-      <h1 class="h-xl">Smart Parking Guidance with Gas Sensing.</h1>
+      <h1 class="h-xl">Engineered Parking, Smart Parking Guidance with Gas Sensing.</h1>
       <p class="deck" style="margin-top:20px">
-        A parking lot system that guides drivers to vacant spots instead of leaving them to
-        search, with an MQ-2 and VOC sensor pair that switches on a ventilation fan once
-        vehicle-fume levels cross a set threshold.
+        A LabVIEW and Arduino parking lot system that opens a column's gate and lights its LEDs
+        the moment a spot frees up in it, with a fully independent MQ-2 ventilation circuit that
+        fans out hazardous fume levels regardless of what the parking logic is doing.
       </p>
-      <p style="margin:0;font-size:16px;color:var(--ink-78)">Course project &middot; LabVIEW and Arduino</p>
+      <p style="margin:0;font-size:16px;color:var(--ink-78)">Course project, Engineered Parking &middot; LabVIEW and Arduino</p>
     </div>
   </div>
 
@@ -36,16 +40,22 @@
     <h2 class="h-md">What It Was</h2>
     <div class="two">
       <p style="margin:0">
-        The core problem was directing drivers straight to a vacant parking spot rather than
-        having them circle the lot looking for one. A second system layered on top monitors air
-        quality: an MQ-2 gas sensor and a VOC sensor watch for the kind of fume levels a running
-        engine produces, tested in development with a lighter as a stand-in fume source, and once
-        readings cross a threshold a small fan switches on.
+        Up to 30% of urban traffic is drivers searching for parking, averaging 8.5 minutes per
+        search (Shoup, 2006), and idling vehicles account for roughly 1.6% of urban CO&sub2;
+        emissions (Paidi et al., 2022). The brief was a smart parking system that cuts that search
+        time and monitors air quality at the same time: light-dependent resistors (LDRs) detect
+        occupancy, LabVIEW processes it, servo gates and LEDs guide drivers in, and a separate
+        MQ-2 gas-sensing circuit runs a ventilation fan.
       </p>
       <p style="margin:0">
-        The vacancy-guidance logic and the gas-sensing and fan control were both built with a
-        combination of LabVIEW for the control and monitoring side and Arduino for the sensor and
-        actuator hardware.
+        The original brief called for guiding drivers to a specific free spot and prioritising
+        whichever column had more availability, both of which were cut for time and budget.
+        Spot-level guidance would have needed several SPDT relays or solid-state switches and a
+        redesigned LED circuit; column prioritisation would have needed LabVIEW counting cars per
+        column from Boolean values and driving a decision structure off that count. The final
+        design instead opens a column's gate and lights its LEDs as soon as any spot frees up in
+        it, a scoped-down design that still gets a driver to a free spot without the added
+        complexity, and left enough time to build and clean the hardware before the demo.
       </p>
     </div>
   </section>
@@ -55,12 +65,130 @@
     <hr class="rule">
     <h2 class="h-md">What I Did</h2>
     <ul class="pts" style="margin-top:0">
-      <li>Designed the vacant-spot guidance logic</li>
-      <li>Integrated an MQ-2 gas sensor and a VOC sensor for fume detection</li>
+      <li>Designed the column-level vacancy guidance logic</li>
+      <li>Integrated the MQ-2 gas sensor for fume detection</li>
       <li>Threshold-triggered fan control to ventilate on elevated fume readings</li>
       <li>Built the control and monitoring system in LabVIEW with Arduino hardware</li>
     </ul>
-    <p class="note">System diagrams, LabVIEW front panel and demonstration footage to be added.</p>
+  </section>
+
+  <section class="sec" id="logic">
+    <span class="lbl">03</span>
+    <hr class="rule">
+    <h2 class="h-md">System Logic</h2>
+    <p class="deck">A voltage comparator per spot, two independent circuits overall</p>
+    <div class="two">
+      <p style="margin:0">
+        Each LDR sits in a voltage-divider comparator circuit against a 10 k&Omega; reference
+        resistor. LabVIEW reads the divider output through a "greater than" block and converts it
+        to a Boolean: true means the spot is taken, false means it is free. Column A reads analog
+        inputs 0&ndash;3, Column B reads 4&ndash;7. A compound arithmetic block ANDs each column's
+        four Booleans together, and when a column reads fully occupied its case structure closes
+        that column's gate and holds its LEDs off; a second compound arithmetic block ANDs both
+        columns together so the main gate stays closed only once the whole lot is full.
+      </p>
+      <p style="margin:0">
+        The ventilation circuit is deliberately not part of this logic. It runs on its own
+        Arduino Nano, separate from the Arduino Uno and power supply driving the parking logic, so
+        a fault in the gate and LED logic can't take the fan down with it. The MQ-2 output is read
+        continuously and compared against a fixed threshold in the Arduino sketch; above it, the
+        fan relay switches on.
+      </p>
+    </div>
+  </section>
+
+  <section class="sec" id="calcs">
+    <span class="lbl">04</span>
+    <hr class="rule">
+    <h2 class="h-md">Key Calculations</h2>
+    <p class="deck">The numbers behind the thresholds and pin choices</p>
+    <div class="scroll-x">
+      <table class="table">
+        <thead><tr><th scope="col">Component</th><th scope="col">Relationship</th><th scope="col">Result</th></tr></thead>
+        <tbody>
+          <tr><td>LDR, spot free</td><td>V = 5V &times; R2/(10k&Omega;+R2), R2 = 10k&Omega;</td><td>2.5 V</td></tr>
+          <tr><td>LDR, spot occupied</td><td>V = 5V &times; R2/(10k&Omega;+R2), R2 = 1M&Omega;</td><td>0.0495 V</td></tr>
+          <tr><td>LDR, occupied/free threshold</td><td>Midpoint of the two states above, R2 = 4.29k&Omega;</td><td>1.5 V</td></tr>
+          <tr><td>LDR sampling rate</td><td>20 ms response &rarr; f<sub>max</sub> = 50 Hz, Nyquist f<sub>s</sub> &ge; 2f<sub>max</sub></td><td>&ge; 100 Hz</td></tr>
+          <tr><td>MQ-2 ADC resolution</td><td>10-bit ADC, V<sub>ref</sub>/2&#8319;</td><td>4.88 mV/step</td></tr>
+          <tr><td>MQ-2 fan-on threshold</td><td>800 ppm over a 200&ndash;1000 ppm range &rarr; V<sub>out</sub>, then &divide; ADC step</td><td>0.75 V, 154 steps</td></tr>
+          <tr><td>Fan power</td><td>P = VI, 24 V &times; 0.08 A</td><td>1.92 W</td></tr>
+          <tr><td>LED power, 14 LEDs</td><td>P = NIV, 14 &times; 0.02 A &times; 2 V</td><td>0.56 W</td></tr>
+          <tr><td>OLED display power</td><td>P = VI, 3.3 V &times; 0.02 A</td><td>0.066 W</td></tr>
+          <tr><td>Temperature sensor output</td><td>10 mV/&deg;C &times; 25&deg;C, then &divide; ADC step</td><td>0.25 V, 51 steps</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">
+      The 1.5 V threshold is deliberately the midpoint between the fully-free and fully-occupied
+      states, so a car partway over the sensor doesn't sit on a decision boundary.
+    </p>
+  </section>
+
+  <section class="sec" id="build">
+    <span class="lbl">05</span>
+    <hr class="rule">
+    <h2 class="h-md">The Build</h2>
+    <p class="deck">LabVIEW logic, the technical drawing, and the physical system</p>
+    <div class="two">
+      <figure>
+        <div class="bp" style="padding:8px">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/parking-labview-block-diagram.png" style="width:100%;height:auto"
+               alt="LabVIEW block diagram reading eight LDR channels across two columns, ANDing each column's occupancy Booleans, and driving servo gates and LEDs through case structures"
+               data-cap="The final LabVIEW block diagram. Eight HIL Read channels across two columns, ANDed per column, driving case structures for each gate and LED set."></button>
+        </div>
+        <figcaption><b>LabVIEW logic.</b> Eight LDR channels, ANDed per column, driving the gate and LED case structures.</figcaption>
+      </figure>
+      <figure>
+        <div class="bp" style="padding:12px">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/parking-technical-drawing.png" style="width:100%;height:auto"
+               alt="Hand-drawn technical drawing showing a top-down view of the 40cm by 40cm lot with LDR, temperature display, servo gate and LED positions, and a bottom-up view of the Arduino Nano and breadboard wiring"
+               data-cap="Top-down (a) and bottom-up (b) technical drawing. 40 x 40 cm lot, LDR and LED placement, servo-controlled gates, and the Arduino Nano ventilation wiring."></button>
+        </div>
+        <figcaption><b>The layout.</b> 40 &times; 40 cm lot, sensor and LED placement, servo gates.</figcaption>
+      </figure>
+    </div>
+    <figure style="margin-top:24px">
+      <div class="bp" style="padding:8px">
+        <button type="button" class="zoombtn"><img class="zoom" src="../assets/parking-system-photos.png" style="width:100%;height:auto"
+             alt="Two photos of the physical system, a top-down view in operation with one free spot and its LEDs illuminated, and a bottom-up view showing the Arduino Nano, breadboards and LDR wiring"
+             data-cap="The system in operation. One free spot at bottom left with its gate open and LEDs lit, and the bottom-up wiring, LDRs and LED legs in heat shrink."></button>
+      </div>
+      <figcaption><b>Built and running.</b> One free spot detected, its gate open and LEDs lit; the wiring underneath.</figcaption>
+    </figure>
+    <figure style="margin-top:24px">
+      <div class="bp" style="padding:8px">
+        <button type="button" class="zoombtn"><img class="zoom" src="../assets/parking-frontpanel-code.png" style="width:100%;height:auto"
+             alt="LabVIEW front panel with a sample-rate control, halt button, and eight Boolean occupancy indicators for Car 1 through Car 8, next to the Arduino C code reading the MQ-2 sensor and switching the fan relay at an 800 ppm threshold"
+             data-cap="The LabVIEW front panel, eight occupancy indicators and a halt control, next to the Arduino sketch that reads the MQ-2 sensor and switches the fan relay at the 800 ppm threshold."></button>
+      </div>
+      <figcaption><b>Front panel and firmware.</b> Occupancy indicators in LabVIEW, ventilation logic in Arduino C.</figcaption>
+    </figure>
+  </section>
+
+  <section class="sec" id="challenges">
+    <span class="lbl">06</span>
+    <hr class="rule">
+    <h2 class="h-md">Challenges and Resolutions</h2>
+    <p class="deck">What went wrong on the bench, and what fixed it</p>
+    <ul class="pts" style="margin-top:0">
+      <li><b>Printing failures.</b> Early servo mounts didn't account for motor depth, and the
+      legs' pegs came up short once drilling debris was cleared. Reprinted with a snug motor
+      pocket fastened by an M2 bolt and nut.</li>
+      <li><b>Ultrasonic sensor failure at the main gate.</b> It would intermittently read a bad
+      value and fault the system. Replaced with another LDR on the same voltage-comparator
+      circuit already used elsewhere, wired to the Arduino Uno's A0 pin since the Q-8 DAQ's eight
+      analog inputs were already committed to the parking spaces.</li>
+      <li><b>Acrylic drilling.</b> Acrylic's low melting point means it melts as it's drilled,
+      worst with the larger 0.25&Prime; bit used for the support pegs. Bored carefully rather than
+      switching material.</li>
+    </ul>
+    <p class="note">
+      Ambient light variation also affected the LDR readings during the demo; it was resolved
+      live by recalibrating the reference voltage to the room's lighting rather than a fix in the
+      logic itself. An overhead LED array to control the lighting environment was the
+      follow-up fix identified but not built.
+    </p>
   </section>
 
   <div style="padding:0 var(--pad)">

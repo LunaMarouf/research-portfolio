@@ -19,6 +19,7 @@
     <a class="lnk" href="#problem">Problem</a>
     <a class="lnk" href="#gen1">Device</a>
     <a class="lnk" href="#results">Results</a>
+    <a class="lnk" href="#setup">Setup</a>
     <a class="lnk" href="#software">Software</a>
     <a class="lnk" href="#limits">Limitations</a>
     <a class="btn btn-primary" href="mailto:lunam@my.yorku.ca">Contact</a>
@@ -28,21 +29,14 @@
   <div class="hero solo" id="top">
     <div>
       <h1 class="h-xl">Molecularly Imprinted Electrochemical Sensor for Cytochrome c Detection.</h1>
-      <p style="margin:20px 0 0;font-size:17px;max-width:52ch;color:var(--ink-78)">
+      <p style="margin:20px auto 0;font-size:17px;max-width:52ch;color:var(--ink-78)">
         A disposable straight-channel three-electrode chip that detects cytochrome c, a marker
         associated with liver damage and hepatitis C, by the shape of the cavity it leaves behind.
-        I designed it, fabricated it in batches, ran the electrochemistry, and wrote the Python
+        Designed, fabricated in batches, characterised electrochemically, with a Python pipeline
         that turns raw instrument files into auditable results.
       </p>
-      <p style="margin:16px 0 0;font-size:16px">
-        <b>Luna Marouf.</b> Final-year Honours BEng Mechanical Engineering, York University
-        Lassonde, 3.8/4.0, graduating 2027. Biosensor project lead at ACuTE, from April 2025.
-        Greater Toronto Area.
-      </p>
-      <p style="margin:12px 0 0;font-size:16px;color:var(--ink-78)">
-        Open to R&amp;D and internship roles in medical devices, diagnostics and sensing.
-      </p>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px">
+      <p style="margin:16px 0 0;font-size:16px;color:var(--ink-78)">ACuTE, York University &middot; Biosensor project lead &middot; From April 2025</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px;justify-content:center">
         <a class="btn btn-primary" href="#results">See the results</a>
         <a class="btn btn-secondary" href="mailto:lunam@my.yorku.ca">Email</a>
         <a class="btn btn-secondary" href="https://www.linkedin.com/in/luna-marouf" target="_blank" rel="noopener">LinkedIn</a>
@@ -139,8 +133,8 @@
       </figure>
       <figure>
         <div class="bp" style="padding:0">
-          <button type="button" class="zoombtn"><img class="zoom" src="../assets/cytc-device-photo.jpg" style="width:100%;height:auto"
-               alt="Assembled straight-channel PMMA chip with blue, black and green potentiostat leads clipped to the three contact pads, a small circular window visible on the top layer"
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/cytc-studio.jpg" style="width:100%;height:auto"
+               alt="Studio product photo of the assembled straight-channel cytochrome c chip with blue, black and green potentiostat leads"
                data-cap="The straight-channel cytochrome c chip, assembled. Blue, black and green leads on the working, counter and reference contact pads."></button>
         </div>
         <figcaption><b>The assembled chip.</b> Potentiostat leads on the three contact pads,
@@ -285,9 +279,45 @@
     </p>
   </section>
 
-  <!-- ============ 07 SOFTWARE ============ -->
-  <section class="sec" id="software">
+  <!-- ============ 07 TEST SETUP ============ -->
+  <section class="sec" id="setup">
     <span class="lbl">07</span>
+    <hr class="rule">
+    <h2 class="h-md">Test Setup</h2>
+    <p class="deck">The bench behind every trace on this page</p>
+    <p class="sub">
+      Every CV, DPV, EIS and chronoamperometry run shown above comes off the same benchtop
+      station: a PalmSens4 potentiostat addressing one device at a time through a shielded
+      sensor cable, controlled and logged in PSTrace 5.10. Device inspection and solution
+      handling share the bench, so a chip moves from preparation to measurement without
+      leaving the station.
+    </p>
+    <div class="two">
+      <figure>
+        <div class="bp" style="padding:8px">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/setup-cv-labelled.jpg" style="width:100%;height:auto"
+               alt="Labelled photo of the benchtop electrochemical test station during a cyclic voltammetry run, showing the PalmSens4 potentiostat, PSTrace 5.10 software, shielded sensor cable, alligator clips on the contact pads, and devices under test"
+               data-cap="Benchtop electrochemical test station. A PalmSens4 potentiostat connects via a shielded sensor cable to thin-film three-electrode devices; runs are configured and recorded in PSTrace 5.10."></button>
+        </div>
+        <figcaption><b>Running a CV scan.</b> PalmSens4 potentiostat, PSTrace software, alligator
+        clips on the WE/RE/CE contact pads.</figcaption>
+      </figure>
+      <figure>
+        <div class="bp" style="padding:8px">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/setup-workstation-labelled.jpg" style="width:100%;height:auto"
+               alt="Labelled photo of the full workstation, showing the Leica MZ10 F stereomicroscope, PSTrace on the acquisition PC, PalmSens4 potentiostat, micropipette, conical tubes of buffer and test solutions, and devices under test in labelled petri dishes"
+               data-cap="Full workstation. Device inspection and solution handling share the bench with the PalmSens4 potentiostat and acquisition PC, so devices move from preparation to measurement without leaving the station."></button>
+        </div>
+        <figcaption><b>The full workstation.</b> Leica MZ10 F stereomicroscope for inspection,
+        alongside the acquisition PC and potentiostat.</figcaption>
+      </figure>
+    </div>
+    <p class="note">A wiring schematic of the test cell is still being drawn and will be added here.</p>
+  </section>
+
+  <!-- ============ 08 SOFTWARE ============ -->
+  <section class="sec" id="software">
+    <span class="lbl">08</span>
     <hr class="rule">
     <h2 class="h-md">Software</h2>
     <p class="deck">The analysis is code, not spreadsheets</p>
@@ -366,7 +396,7 @@
 
   <!-- ============ 08 LIMITATIONS ============ -->
   <section class="sec" id="limits">
-    <span class="lbl">08</span>
+    <span class="lbl">09</span>
     <hr class="rule">
     <h2 class="h-md">Limitations and Next Steps</h2>
     <p class="deck">What this platform has not shown yet</p>
@@ -401,7 +431,7 @@
 
   <!-- ============ 09 RELATED ============ -->
   <section class="sec" id="output">
-    <span class="lbl">09</span>
+    <span class="lbl">10</span>
     <hr class="rule">
     <div class="split-75" style="gap:32px">
       <div>

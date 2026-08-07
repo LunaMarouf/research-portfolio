@@ -29,15 +29,12 @@
     <div>
       <span class="tag tag-accent" style="margin-bottom:16px;display:inline-block">Active development</span>
       <h1 class="h-xl">Hepatitis C Virus (HCV) Envelope 2 (E2) Detection, Circular Architecture Sensor.</h1>
-      <p style="margin:20px 0 0;font-size:17px;max-width:52ch;color:var(--ink-78)">
+      <p style="margin:20px auto 0;font-size:17px;max-width:52ch;color:var(--ink-78)">
         The second-generation successor to the straight-channel cytochrome c platform, targeting
-        the hepatitis C virus Envelope 2 protein on a purpose-designed circular device. This is
-        the project I am currently spending most of my lab time on.
+        the hepatitis C virus Envelope 2 protein on a purpose-designed circular device.
       </p>
-      <p style="margin:16px 0 0;font-size:16px">
-        <b>Luna Marouf.</b> Biosensor project lead, ACuTE, York University, from April 2025.
-      </p>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px">
+      <p style="margin:16px 0 0;font-size:16px;color:var(--ink-78)">ACuTE, York University &middot; Biosensor project lead &middot; From April 2025</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px;justify-content:center">
         <a class="btn btn-primary" href="sensors-cytochrome-c.html">See the cytochrome c platform</a>
         <a class="btn btn-secondary" href="mailto:lunam@my.yorku.ca">Email</a>
       </div>
@@ -118,6 +115,113 @@
       device, see <a href="sensors-cytochrome-c.html#gen1">the cytochrome c fabrication
       section</a>. Quality screening for this device is covered below.
     </p>
+
+    <h3 class="h-sm" style="margin:40px 0 16px">Fabrication Walkthrough</h3>
+    <p class="sub">Mask to assembled chip, in the order it actually happens on the bench.</p>
+
+    <div class="two">
+      <figure>
+        <div class="bp" style="padding:12px">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/e2-lasercut-mask-design.jpg" style="width:100%;height:auto"
+               alt="CorelDRAW mask artwork showing one electrode unit, three contact pads narrowing into leads that converge at a circular sensing window"
+               data-cap="The mask artwork in CorelDRAW. One electrode unit, three contact pads narrowing into leads that converge at the circular sensing window, laid out for a full stencil panel of repeats."></button>
+        </div>
+        <figcaption><b>Mask design.</b> One electrode unit, laid out for a full panel of repeats.</figcaption>
+      </figure>
+      <figure>
+        <div class="bp" style="padding:12px">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/e2-lasercut-job-settings.jpg" style="width:100%;height:auto"
+               alt="Laser cutter software job queue showing an engrave pass and three vector cutting passes at different speed and power settings"
+               data-cap="The cutter's job queue for this mask. An engrave pass plus three vector passes, each keyed to a colour layer in the mask art, 70 to 80% speed and 5 to 10% power, 3 to 12 minutes runtime per pass."></button>
+        </div>
+        <figcaption><b>Cutter job settings.</b> One engrave pass, three vector passes per colour layer.</figcaption>
+      </figure>
+    </div>
+
+    <figure style="margin-top:24px">
+      <div class="bp" style="padding:8px">
+        <video controls preload="metadata" style="width:100%;display:block">
+          <source src="../assets/e2-lasercut-video.mov" type="video/mp4">
+          <a href="../assets/e2-lasercut-video.mov">Download the video</a>.
+        </video>
+      </div>
+      <figcaption>The mask being cut.</figcaption>
+    </figure>
+
+    <p class="note" style="margin-top:24px">
+      A layer-stack schematic for this fabrication sequence is still being drawn and will be added
+      here.
+    </p>
+
+    <div class="g3" style="margin-top:32px">
+      <figure>
+        <div class="bp" style="padding:0">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/e2-prespray-panel.jpg" style="width:100%;height:auto"
+               alt="Stencil-cut panel of repeat electrode units on foil-lined backing before the graphene spray pass"
+               data-cap="A full panel of repeat electrode units on foil-lined backing, stencil cut, before the graphene spray pass."></button>
+        </div>
+        <figcaption><b>Panel, before graphene.</b> Stencil-cut and masked, ready for spraying.</figcaption>
+      </figure>
+      <figure>
+        <div class="bp" style="padding:0">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/e2-sprayed-panel.jpg" style="width:100%;height:auto"
+               alt="The same style of panel after the graphene spray pass, dark overspray confined to each device's sensing area by the stencil"
+               data-cap="The same style of panel after the graphene spray pass. The stencil confines the coating to the working and counter electrode areas of each device."></button>
+        </div>
+        <figcaption><b>Panel, after graphene.</b> Overspray confined by the stencil, device by device.</figcaption>
+      </figure>
+      <figure>
+        <div class="bp" style="padding:0">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/e2-spray-compressor.jpg" style="width:100%;height:auto"
+               alt="Nameplate of the Timbertech AS-186 piston air compressor supplying the spray gun, rated 20 to 23 litres per minute flow"
+               data-cap="The compressor supplying the spray gun. Timbertech AS-186 piston compressor, rated 20 to 23 L/min flow, autostop near 4 bar, matching the spray parameters above."></button>
+        </div>
+        <figcaption><b>Spray air supply.</b> The 4 bar, 23 L/min spray parameters come from this unit.</figcaption>
+      </figure>
+    </div>
+
+    <div class="two" style="margin-top:32px">
+      <figure>
+        <div class="bp" style="padding:0">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/e2-oven-cure.jpg" style="width:100%;height:auto"
+               alt="Devices labelled D1, D2 and D3 curing on foil-lined trays in an oven"
+               data-cap="Devices D1 to D3 curing on foil-lined trays after spraying."></button>
+        </div>
+        <figcaption><b>Cure.</b> Sprayed panels go into the oven before the liner comes off.</figcaption>
+      </figure>
+      <figure>
+        <div class="bp" style="padding:0">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/e2-liner-removal-note.jpg" style="width:100%;height:auto"
+               alt="A fabrication note next to a single device: liner is removed after the silver curing, then examined under the microscope"
+               data-cap="A fabrication note from the bench: once the Ag/AgCl layer has cured, the protective liner comes off and the device goes under the microscope for inspection."></button>
+        </div>
+        <figcaption><b>Inspect.</b> Liner off, straight to the microscope, before any device is tested.</figcaption>
+      </figure>
+    </div>
+
+    <div class="two" style="margin-top:32px">
+      <figure>
+        <div class="bp" style="padding:0">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/e2-assembled-device-a.jpg" style="width:100%;height:auto"
+               alt="Assembled circular-device chip with green, black and blue potentiostat leads clipped to the contact pads"
+               data-cap="An assembled device, leads clipped on and ready for bench testing."></button>
+        </div>
+        <figcaption><b>Assembled, angle 1.</b> Leads clipped on and ready for bench testing.</figcaption>
+      </figure>
+      <figure>
+        <div class="bp" style="padding:0">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/e2-assembled-device-b.jpg" style="width:100%;height:auto"
+               alt="The same style of assembled circular-device chip from a second angle, gold sensing window visible"
+               data-cap="The same device, second angle. The gold-toned circular sensing window sits above the three lead pads."></button>
+        </div>
+        <figcaption><b>Assembled, angle 2.</b> The circular sensing window above the three lead pads.</figcaption>
+      </figure>
+    </div>
+
+    <p class="note" style="margin-top:24px">
+      The CAD assembly for this device and the stencil drawings themselves are still being
+      finalised and will be added here.
+    </p>
   </section>
 
   <!-- ============ 03 BASELINE ============ -->
@@ -127,39 +231,81 @@
     <h2 class="h-md">Baseline Electrochemical Characterisation</h2>
     <p class="deck">Characterising the cell before running an analyte on it</p>
     <p class="sub">
-      One representative result per technique, each the mean of three runs, on Devices 1, 6 and
-      7. These characterise the empty cell, not an Envelope 2 response. No Envelope 2
-      concentration response has been measured yet.
+      Triplicate data per technique across several bare devices, 5 mM ferri/ferrocyanide in 0.1 M
+      KCl unless noted. These characterise the empty cell, not an Envelope 2 response. No Envelope
+      2 concentration response has been measured yet. Full test conditions and code are the same
+      manifest-driven pipeline used on the cytochrome c platform, see
+      <a href="sensors-cytochrome-c.html#software">the software section</a>.
     </p>
     <div class="g3">
       <figure>
         <div class="bp" style="padding:12px">
-          <button type="button" class="zoombtn"><img class="zoom" src="../assets/eis-nyquist.png"
-               alt="Nyquist plot showing a charge transfer semicircle and a rising low frequency tail"
-               data-cap="EIS Nyquist plot, Device 6, mean of three runs. 5 mM ferri/ferrocyanide, 0.1 M KCl, 0.20 V DC bias, 10 mV AC, 50 kHz to 0.1 Hz."></button>
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/e2-cv-baseline-triplicate.png"
+               alt="Three cyclic voltammograms, one per device, each showing the mean of three scans with a shaded standard deviation band"
+               data-cap="CV, Devices 1, 3 and 4, mean of the third scan across three runs each, shaded ±1 SD band. −1.0 to +1.0 V, 100 mV/s."></button>
         </div>
-        <figcaption><b>Impedance.</b> Device 6. Uncompensated resistance near 0.50 kΩ, charge
-        transfer near 0.45 kΩ, with a low-frequency mass-transport tail.</figcaption>
+        <figcaption><b>Cyclic voltammetry.</b> Devices 1, 3 and 4, triplicate mean ±1 SD each.</figcaption>
       </figure>
       <figure>
         <div class="bp" style="padding:12px">
-          <button type="button" class="zoombtn"><img class="zoom" src="../assets/dpv-peak.png"
-               alt="Differential pulse voltammogram with the oxidation peak marked and annotated"
-               data-cap="DPV, Device 1, mean of three runs, faradaic-only peak marked."></button>
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/e2-dpv-baseline-triplicate.png"
+               alt="Three differential pulse voltammograms, one per device, each with the oxidation peak marked"
+               data-cap="DPV, Devices 5, 6 and 7, mean of three runs each, oxidation peak marked. Device 5: Ep,ox = 0.147 V, Ip,ox = 28.13 ± 2.50 µA. Device 6: Ep,ox = 0.147 V, Ip,ox = 44.04 ± 7.74 µA. Device 7: Ep,ox = 0.162 V, Ip,ox = 40.03 ± 0.49 µA."></button>
         </div>
-        <figcaption><b>Differential pulse voltammetry.</b> Device 1. E<sub>p,ox</sub> = 0.162 V,
-        I<sub>p,ox</sub> = 33.42 ± 1.22 µA.</figcaption>
+        <figcaption><b>Differential pulse voltammetry.</b> Devices 5, 6 and 7, triplicate mean each, oxidation peak marked.</figcaption>
       </figure>
       <figure>
         <div class="bp" style="padding:12px">
-          <button type="button" class="zoombtn"><img class="zoom" src="../assets/mpd-vs-pbs.png"
-               alt="Two overlaid current potential traces comparing a PBS blank with the mPD solution"
-               data-cap="Linear sweep, Device 7. PBS blank against 20 mM m-PD, showing monomer oxidation onset."></button>
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/e2-eis-baseline-triplicate.png"
+               alt="Two Nyquist plots, one per device, each showing a charge-transfer semicircle and a rising low-frequency tail"
+               data-cap="EIS Nyquist plots, Device 1 (n = 3) and Device 3 (n = 2). 0.20 V DC bias, 10 mV AC, 50 kHz to 0.1 Hz."></button>
         </div>
-        <figcaption><b>Monomer, not background.</b> Device 7. m-PD oxidation onset near 0.30 V
-        rising to about 31 µA while the blank stays under 11 µA.</figcaption>
+        <figcaption><b>Impedance.</b> Device 1 (n = 3) and Device 3 (n = 2), charge-transfer semicircle plus mass-transport tail.</figcaption>
       </figure>
     </div>
+
+    <h3 class="h-sm" style="margin:40px 0 16px">Film-Growth Potential Selection</h3>
+    <p class="sub">
+      Before growing the imprinted film, the monomer has to be confirmed oxidisable at the
+      electrode, then the chronoamperometric deposition potential has to be picked.
+    </p>
+    <div class="two">
+      <figure>
+        <div class="bp" style="padding:12px">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/e2-dpv-mpd-sigmoidal.png"
+               alt="Three sigmoidal DPV oxidation-wave graphs comparing a PBS blank against 20 mM mPD, one per device"
+               data-cap="DPV sigmoidal oxidation wave, Devices 1, 6 and 7, mean of three runs, mPD against a PBS blank. Ip mPD = 20.707 ± 0.240 µA (Device 1), 12.337 ± 0.144 µA (Device 6), 30.666 ± 0.605 µA (Device 7), all onsetting between 0.26 and 0.27 V."></button>
+        </div>
+        <figcaption><b>Monomer confirmed.</b> mPD oxidises well above the PBS blank on all three devices, onset ≈ 0.26 to 0.27 V.</figcaption>
+      </figure>
+      <figure>
+        <div class="bp" style="padding:12px">
+          <button type="button" class="zoombtn"><img class="zoom" src="../assets/e2-ca-electropolymerization-035v.png"
+               alt="Three chronoamperometry current-decay graphs at 0.35 V, one per device, each with the operational plateau onset marked"
+               data-cap="Chronoamperometric electropolymerisation at 0.35 V, Devices 7, 8 and 16. Plateau onset 16.50 ± 1.31 s, plateau current 3.419 ± 1.901 µA."></button>
+        </div>
+        <figcaption><b>0.35 V selected.</b> Devices 7, 8 and 16. The only trial potential where a plateau was reached.</figcaption>
+      </figure>
+    </div>
+
+    <div class="scroll-x" style="margin-top:24px">
+      <table class="table">
+        <thead><tr><th scope="col">Applied voltage</th><th scope="col">Devices</th><th scope="col">Initial valid current, mean ± SD</th><th scope="col">Plateau onset</th><th scope="col">Plateau current, mean ± SD</th></tr></thead>
+        <tbody>
+          <tr><td>0.35 V</td><td>7, 8, 16</td><td>5.116 ± 1.147 µA</td><td>16.50 ± 1.31 s</td><td>3.419 ± 1.901 µA</td></tr>
+          <tr><td>0.40 V</td><td>13, 17, 18</td><td>18.684 ± 6.438 µA</td><td>Not reached</td><td>Not reached</td></tr>
+          <tr><td>0.45 V</td><td>4, 5, 9</td><td>32.119 ± 18.046 µA</td><td>Not reached</td><td>Not reached</td></tr>
+          <tr><td>0.55 V</td><td>2, 3, 10</td><td>38.155 ± 5.325 µA</td><td>Not reached</td><td>Not reached</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">
+      0.35 V was the only trial potential where the current settled to a plateau rather than
+      climbing indefinitely, which is why it was carried forward as the electropolymerisation
+      setpoint elsewhere on this page. Trial potentials above 0.35 V also show sharply rising
+      initial-current variance across devices (SD nearly matching the mean at 0.45 V), a second
+      reason to prefer the lower potential.
+    </p>
   </section>
 
   <!-- ============ 04 QUALITY ============ -->
